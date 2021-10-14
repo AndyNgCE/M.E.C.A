@@ -19,6 +19,7 @@ public class Cards : MonoBehaviour
     public CardBlueprint cardSeven;
 
     CardManager cardManager;
+    HealthController healthController;
 
     void Start()
     {
@@ -29,24 +30,28 @@ public class Cards : MonoBehaviour
     {
         Debug.Log("CardOne Selected");
         cardManager.SelectCardToUse(cardOne);
+        healthController.DealDamage(10);
     }
 
     public void SelectCardTwo()
     {
         Debug.Log("CardTwo Selected");
         cardManager.SelectCardToUse(cardTwo);
+        healthController.DealDamage(20);
     }
 
     public void SelectCardThree()
     {
         Debug.Log("CardThree Selected");
         cardManager.SelectCardToUse(cardThree);
+        healthController.DealDamage(30);
     }
 
     public void SelectCardFour()
     {
         Debug.Log("CardFour Selected");
         cardManager.SelectCardToUse(cardFour);
+        healthController.TakeDamage(10);
     }
 
     public void SelectCardFive()
