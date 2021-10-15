@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class DeckModel : MonoBehaviour //CardStack
 {
-    List<int> cards;
+    public List<int> cards;
 
     public bool isGameDeck;
+
+    public CardModel cardModel;
+    public GameController gameController;
+
+    //int numCard = 0;
 
     public bool HasCards
     {
         get { return cards != null && cards.Count > 0; }
     }
+
+    public event CardRemovedEventHandler CardRemoved;
 
     public int CardCount
     {
@@ -36,16 +43,40 @@ public class DeckModel : MonoBehaviour //CardStack
         }
     }
 
-    public int Pop()
+    public int Pop(int index) //default index to 0
     {
-        int temp = cards[0];
-        cards.RemoveAt(0);
+        int temp = cards[index];
+        cards.RemoveAt(index);
+
+        if(CardRemoved != null)
+        {
+            CardRemoved(this, new CardRemovedEventArgs(temp));
+        }
+
         return temp;
     }
 
     public void Push(int card)
     {
         cards.Add(card);
+        //cardModel.cardNum = numCard; // set equal to spot index
+        //numCard++;
+    }
+
+    public int HandValue()
+    {
+        int total = 0;
+
+        foreach(int card in GetCards())
+        {
+            int cardVal = card % 13;
+
+            cardVal += 2;
+
+            total = total + cardVal;
+        }
+
+        return total;
     }
 
     public void CreateDeck()

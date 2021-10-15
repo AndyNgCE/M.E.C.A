@@ -10,6 +10,8 @@ public class CardModel : MonoBehaviour
 
     public int cardIndex;
 
+    public int cardNum;
+
     public void ViewCard()
     {
         spriteRenderer.sprite = faces[cardIndex];

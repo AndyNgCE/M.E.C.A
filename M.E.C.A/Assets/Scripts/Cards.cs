@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cards : MonoBehaviour
 {
-    public CardBlueprint cardOne;
+    /*public CardBlueprint cardOne;
 
     public CardBlueprint cardTwo;
 
@@ -70,5 +70,5 @@ public class Cards : MonoBehaviour
     {
         Debug.Log("CardSeven Selected");
         cardManager.SelectCardToUse(cardSeven);
-    }
+    }*/
 }

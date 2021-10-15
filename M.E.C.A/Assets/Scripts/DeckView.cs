@@ -5,20 +5,34 @@ using UnityEngine;
 [RequireComponent(typeof(DeckModel))]
 public class DeckView : MonoBehaviour  //CardStackView
 {
+    //HealthController healthController;
     DeckModel deck;
-    List<int> fetchedCards;
+    Dictionary<int, GameObject> fetchedCards;
     int lastCount;
     
     public Vector3 start;
     public float cardOffset;
     public GameObject cardPrefab;
 
+    //int counter = 0;
+
     void Start()
     {
-        fetchedCards = new List<int>();
+        fetchedCards = new Dictionary<int, GameObject>();
         deck = GetComponent<DeckModel>();
         ShowCards();
         lastCount = deck.CardCount;
+
+        deck.CardRemoved += deck_CardRemoved;
+    }
+
+    void deck_CardRemoved(object sender, CardRemovedEventArgs e)
+    {
+        if(fetchedCards.ContainsKey(e.CardIndex))
+        {
+            Destroy(fetchedCards[e.CardIndex]);
+            fetchedCards.Remove(e.CardIndex);
+        }
     }
 
     void Update()
@@ -51,7 +65,7 @@ public class DeckView : MonoBehaviour  //CardStackView
 
     void AddCard(Vector3 position, int cardIndex, int positionalIndex)
     {
-        if(fetchedCards.Contains(cardIndex))
+        if(fetchedCards.ContainsKey(cardIndex))
         {
             return;
         }
@@ -66,6 +80,16 @@ public class DeckView : MonoBehaviour  //CardStackView
         SpriteRenderer spriteRenderer = cardCopy.GetComponent<SpriteRenderer>();
         spriteRenderer.sortingOrder = positionalIndex;
 
-        fetchedCards.Add(cardIndex);
+        fetchedCards.Add(cardIndex, cardCopy);
+
+        Debug.Log("Hand Value = " + deck.HandValue());
+        /*int damageToDeal = deck.HandValue();
+        counter++;
+
+        if(counter == 3)
+        {
+            healthController.DealDamage(damageToDeal);
+            counter = 0;
+        }*/
     }
 }
