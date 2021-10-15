@@ -7,7 +7,7 @@ public class DeckView : MonoBehaviour  //CardStackView
 {
     //HealthController healthController;
     DeckModel deck;
-    Dictionary<int, GameObject> fetchedCards;
+    Dictionary<int, CardView> fetchedCards;
     int lastCount;
     
     public Vector3 start;
@@ -16,9 +16,21 @@ public class DeckView : MonoBehaviour  //CardStackView
 
     //int counter = 0;
 
+    public void Clear()
+    {
+        deck.Reset();
+
+        foreach(CardView view in fetchedCards.Values)
+        {
+            Destroy(view.Card);
+        }
+
+        fetchedCards.Clear();
+    }
+
     void Start()
     {
-        fetchedCards = new Dictionary<int, GameObject>();
+        fetchedCards = new Dictionary<int, CardView>();
         deck = GetComponent<DeckModel>();
         ShowCards();
         lastCount = deck.CardCount;
@@ -30,7 +42,7 @@ public class DeckView : MonoBehaviour  //CardStackView
     {
         if(fetchedCards.ContainsKey(e.CardIndex))
         {
-            Destroy(fetchedCards[e.CardIndex]);
+            Destroy(fetchedCards[e.CardIndex].Card);
             fetchedCards.Remove(e.CardIndex);
         }
     }
@@ -80,7 +92,7 @@ public class DeckView : MonoBehaviour  //CardStackView
         SpriteRenderer spriteRenderer = cardCopy.GetComponent<SpriteRenderer>();
         spriteRenderer.sortingOrder = positionalIndex;
 
-        fetchedCards.Add(cardIndex, cardCopy);
+        fetchedCards.Add(cardIndex, new CardView(cardCopy));
 
         Debug.Log("Hand Value = " + deck.HandValue());
         /*int damageToDeal = deck.HandValue();

@@ -12,7 +12,7 @@ public class DebugDealer : MonoBehaviour
     {
         if(GUI.Button(new Rect(30, 30, 300, 200), "Hit Me!"))
         {
-            player.Push(dealer.Pop(0));
+            player.Push(spots.Pop(0));
         }
 
         if(GUI.Button(new Rect(30, 800, 300, 200), "Hit Me!"))

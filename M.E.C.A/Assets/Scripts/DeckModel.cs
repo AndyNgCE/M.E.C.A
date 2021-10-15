@@ -98,6 +98,11 @@ public class DeckModel : MonoBehaviour //CardStack
             cards[n] = temp;
         }
     }
+
+    public void Reset()
+    {
+        cards.Clear();
+    }
     
     void Awake()
     {

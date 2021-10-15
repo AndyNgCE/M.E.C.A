@@ -6,8 +6,8 @@ public class OnMouse : MonoBehaviour
 {
     public GameController gameController;
 
-    void OnMouseDown()
+    public void OnMouseDown()
     {
-        gameController.ChooseCard(0); // Need the 0 in here to be the index of the card in hand(player)
+        StartCoroutine(gameController.ChooseCard(0)); // Need the 0 in here to be the index of the card in hand(player)
     }
 }
