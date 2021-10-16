@@ -11,7 +11,7 @@ public class DeckModel : MonoBehaviour //CardStack
     public CardModel cardModel;
     public GameController gameController;
 
-    //int numCard = 0;
+    int numCard = 0;
 
     public bool HasCards
     {
@@ -58,9 +58,9 @@ public class DeckModel : MonoBehaviour //CardStack
 
     public void Push(int card)
     {
+        cardModel.cardNum = numCard; // set equal to spot index
+        numCard++;
         cards.Add(card);
-        //cardModel.cardNum = numCard; // set equal to spot index
-        //numCard++;
     }
 
     public int HandValue()

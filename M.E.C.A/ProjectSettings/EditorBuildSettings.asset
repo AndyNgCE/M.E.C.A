@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CombatScene.unity
     guid: cef285fcff075ef48a608fc60269dedf
+  - enabled: 1
+    path: Assets/Scenes/QuitButton.unity
+    guid: 92c1e2496110f1a489d2f107dd85339a
   m_configObjects: {}
