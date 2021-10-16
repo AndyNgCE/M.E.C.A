@@ -10,15 +10,24 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    void Start()
+    {
+        rb = this.GetComponent<Rigidbody2D>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
+
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        moveCharacter(movement);
+    }
+    void moveCharacter(Vector2 direction)
+    {
+        rb.MovePosition((Vector2)transform.position + (movement * moveSpeed * Time.fixedDeltaTime));
     }
 }

@@ -1,14 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneSwapper : MonoBehaviour
 {
-    [SerializeField] string sceneName;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Start()
     {
-            SceneManager.LoadScene(sceneName);
+        //Set the tag of this GameObject to Player
+        gameObject.tag = "Enemy";
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //Check to see if the tag on the collider is equal to Enemy
+        if (other.tag == "Player")
+        {
+            Debug.Log("Triggered by Player");
+            SceneManager.LoadScene(sceneName: "CombatScene");
+        }
     }
 }
