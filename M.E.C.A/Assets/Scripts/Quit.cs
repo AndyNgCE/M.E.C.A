@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Quit : MonoBehaviour
 {
@@ -9,5 +10,10 @@ public class Quit : MonoBehaviour
         Debug.Log("QUIT");
         //Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(sceneName: "CombatScene");
     }
 }

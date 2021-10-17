@@ -94,8 +94,11 @@ public class GameController : MonoBehaviour
             DealDamage(card2);
             //yield return new WaitForSeconds(0.5f);
             DealDamage(card3);
-            StartCoroutine(EnemyTurn());
-            yield return new WaitForSeconds(0.5f);
+            if(enemyCurrentHealth >= 0)
+            {
+                StartCoroutine(EnemyTurn());
+                yield return new WaitForSeconds(0.5f);
+            }
         }
     }
 
