@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     
     public Text winnerText;
     public Text turnText;
+    public Text playerTurnText;
 
     int condition = 1; // 0 when round over
     int turn = 1;
@@ -106,10 +107,13 @@ public class GameController : MonoBehaviour
     {
         if(condition == 1)
         {
+            yield return new WaitForSeconds(1f);
+            playerTurnText.text = "OPPONENT'S TURN";
             // make OnMouseDown for cards false
+            yield return new WaitForSeconds(0.5f);
             for(int i = 0; i < 3; i++)
             {
-                yield return new WaitForSeconds(0.5f);
+                //yield return new WaitForSeconds(0.5f);
                 damageToTake = UnityEngine.Random.Range(8, 20);
                 TakeDamage(damageToTake);
             }
@@ -167,6 +171,8 @@ public class GameController : MonoBehaviour
     {
         turnText.text = "TURN " + turn;
         turn++;
+        playerTurnText.text = "YOUR TURN";
+        condition = 1;
         for(int i = 0; i < 7; i++)
         {
             player.Push(dealer.Pop(0));

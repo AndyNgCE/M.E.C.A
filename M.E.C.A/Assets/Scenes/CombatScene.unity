@@ -334,6 +334,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541974cce365b2947b776b45dad03cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &235732021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7160072905300714125, guid: 563c89e8b0e57a84f8158789a4cecea9, type: 3}
+  m_PrefabInstance: {fileID: 7160072905003501224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &283290163
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +635,7 @@ MonoBehaviour:
   spots: {fileID: 1591837011}
   winnerText: {fileID: 1035432435}
   turnText: {fileID: 595008358}
+  playerTurnText: {fileID: 235732021}
   prevNum: 0
   numCardsPlayed: 0
   firstNum: 0
@@ -1454,6 +1466,10 @@ PrefabInstance:
     - target: {fileID: 6222181345319314439, guid: 563c89e8b0e57a84f8158789a4cecea9, type: 3}
       propertyPath: m_Name
       value: AllText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160072905300714125, guid: 563c89e8b0e57a84f8158789a4cecea9, type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7160072906514022633, guid: 563c89e8b0e57a84f8158789a4cecea9, type: 3}
       propertyPath: m_Text
