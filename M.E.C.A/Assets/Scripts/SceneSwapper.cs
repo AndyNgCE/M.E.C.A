@@ -9,10 +9,9 @@ public class SceneSwapper : MonoBehaviour
         gameObject.tag = "Enemy";
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        //Check to see if the tag on the collider is equal to Enemy
-        if (other.tag == "Player")
+        if(col.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Triggered by Player");
             SceneManager.LoadScene(sceneName: "CombatScene");
