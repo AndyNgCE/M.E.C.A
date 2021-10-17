@@ -11,7 +11,7 @@ public class DeckModel : MonoBehaviour //CardStack
     public CardModel cardModel;
     public GameController gameController;
 
-    int numCard = 0;
+    public int numCard = 0;
 
     public bool HasCards
     {

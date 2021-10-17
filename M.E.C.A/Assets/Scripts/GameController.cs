@@ -9,12 +9,17 @@ public class GameController : MonoBehaviour
     public DeckModel player;
     public DeckModel dealer;
     public DeckModel spots;
+    //public DeckModel deckModel;
     
     public Text winnerText;
     public Text turnText;
 
     int condition = 1; // 0 when round over
     int turn = 1;
+
+    public int prevNum = 0;
+    public int numCardsPlayed = 0;
+    public int firstNum = 0;
 
     public int maxHealth = 100;
     public int currentHealth = 100;
@@ -42,7 +47,11 @@ public class GameController : MonoBehaviour
         dealer.GetComponent<DeckView>().Clear();
         dealer.CreateDeck();
 
-        StartGame();
+        player.numCard = 0;
+        prevNum = 0;
+        numCardsPlayed = 0;
+
+        StartCoroutine(StartGame());
     }
 
     public void TakeDamage(int damageAmount)
@@ -79,13 +88,14 @@ public class GameController : MonoBehaviour
         if(spots.CardCount >= 3)
         {
             Debug.Log("Deal Card Damage!");
-            yield return new WaitForSeconds(0.5f);
+            //yield return new WaitForSeconds(0.5f);
             DealDamage(card1);
-            yield return new WaitForSeconds(0.5f);
+            //yield return new WaitForSeconds(0.5f);
             DealDamage(card2);
-            yield return new WaitForSeconds(0.5f);
+            //yield return new WaitForSeconds(0.5f);
             DealDamage(card3);
             StartCoroutine(EnemyTurn());
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
@@ -134,7 +144,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        StartGame();
+        StartCoroutine(StartGame());
     }
 
     void Update()
@@ -150,13 +160,14 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void StartGame()
+    IEnumerator StartGame()
     {
         turnText.text = "TURN " + turn;
         turn++;
         for(int i = 0; i < 7; i++)
         {
             player.Push(dealer.Pop(0));
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }

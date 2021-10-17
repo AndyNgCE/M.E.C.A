@@ -620,6 +620,7 @@ MonoBehaviour:
   player: {fileID: 207370518}
   dealer: {fileID: 51486673}
   spots: {fileID: 1591837011}
+  cardModel: {fileID: 1519256802}
   winnerText: {fileID: 1035432435}
   turnText: {fileID: 595008358}
   maxHealth: 100
@@ -1036,6 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 794271614}
+  cardModel: {fileID: 1519256802}
 --- !u!61 &1519256801
 BoxCollider2D:
   m_ObjectHideFlags: 0
