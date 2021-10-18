@@ -95,7 +95,7 @@ public class GameController : MonoBehaviour
             DealDamage(card2);
             //yield return new WaitForSeconds(0.5f);
             DealDamage(card3);
-            if(enemyCurrentHealth >= 0)
+            if(enemyCurrentHealth > 0)
             {
                 StartCoroutine(EnemyTurn());
                 yield return new WaitForSeconds(0.5f);
@@ -114,7 +114,7 @@ public class GameController : MonoBehaviour
             for(int i = 0; i < 3; i++)
             {
                 //yield return new WaitForSeconds(0.5f);
-                damageToTake = UnityEngine.Random.Range(8, 20);
+                damageToTake = UnityEngine.Random.Range(6, 20);
                 TakeDamage(damageToTake);
             }
             yield return new WaitForSeconds(1f);
@@ -145,7 +145,7 @@ public class GameController : MonoBehaviour
             winnerText.text = "DEFEAT!!!"; // return to start of level (probably some sort of menu tbh)
             condition = 0;
             yield return new WaitForSeconds(3.5f);
-            SceneManager.LoadScene(sceneName: "QuitButton");
+            SceneManager.LoadScene(sceneName: "MainMenu");
         }
     }
 
