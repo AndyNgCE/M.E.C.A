@@ -15,6 +15,10 @@ public class GameController : MonoBehaviour
     public Text turnText;
     public Text playerTurnText;
 
+    public GameObject restartLevel;
+    public GameObject quitLevel;
+    public GameObject combatOverBlock;
+
     int condition = 1; // 0 when round over
     int turn = 1;
 
@@ -145,8 +149,21 @@ public class GameController : MonoBehaviour
             winnerText.text = "DEFEAT!!!"; // return to start of level (probably some sort of menu tbh)
             condition = 0;
             yield return new WaitForSeconds(3.5f);
-            SceneManager.LoadScene(sceneName: "MainMenu");
+            restartLevel.SetActive(true);
+            quitLevel.SetActive(true);
+            combatOverBlock.SetActive(true);
+            //SceneManager.LoadScene(sceneName: "MainMenu");
         }
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(sceneName: "MainMenu");
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(sceneName: "Travel Scene");
     }
 
     void Start()
@@ -169,6 +186,9 @@ public class GameController : MonoBehaviour
 
     IEnumerator StartGame()
     {
+        restartLevel.SetActive(false);
+        quitLevel.SetActive(false);
+        combatOverBlock.SetActive(false);
         turnText.text = "TURN " + turn;
         turn++;
         playerTurnText.text = "YOUR TURN";

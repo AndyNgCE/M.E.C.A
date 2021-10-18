@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 1773363956}
   - component: {fileID: 1773363955}
   m_Layer: 0
-  m_Name: 16322443966516786630518833737830
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
