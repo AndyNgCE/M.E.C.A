@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public GameObject volumeSlider;
+    public GameObject musicSlider;
+    public GameObject settingsFade;
+
     public void Quit()
     {
         Debug.Log("QUIT");
@@ -16,5 +20,12 @@ public class MenuController : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene(sceneName: "Travel Scene");
+    }
+
+    public void SettingsMenu()
+    {
+        volumeSlider.SetActive(true);
+        musicSlider.SetActive(true);
+        settingsFade.SetActive(true);
     }
 }

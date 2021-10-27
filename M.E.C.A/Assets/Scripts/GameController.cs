@@ -6,15 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    // The deck, player's hand, and cards chosen
     public DeckModel player;
     public DeckModel dealer;
     public DeckModel spots;
     //public DeckModel deckModel;
     
+    // UI text
     public Text winnerText;
     public Text turnText;
     public Text playerTurnText;
 
+    // Defeat overlay
     public GameObject restartLevel;
     public GameObject quitLevel;
     public GameObject combatOverBlock;
@@ -26,19 +29,24 @@ public class GameController : MonoBehaviour
     public int numCardsPlayed = 0;
     public int firstNum = 0;
 
+    // Player health
     public int maxHealth = 100;
     public int currentHealth = 100;
     public Image healthBar;
 
+    // Enemy Health
     public int enemyMaxHealth = 100;
     public int enemyCurrentHealth = 100;
     public Image enemyHealthBar;
+
+    // Cards played
     int damageToTake;
     // public int[] values = new int[3];
     public int card1;
     public int card2;
     public int card3;
 
+    //Starts Player's turn
     public void StartTurn()
     {
         if(condition == 0)
@@ -59,6 +67,7 @@ public class GameController : MonoBehaviour
         StartCoroutine(StartGame());
     }
 
+    // Function to deal damage to player
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
@@ -66,6 +75,7 @@ public class GameController : MonoBehaviour
         Debug.Log("Current Health: " + currentHealth);
     }
 
+    // Function to deal damage to enemy
     public void DealDamage(int damageAmount)
     {
         Debug.Log("Damage Dealt");
@@ -73,6 +83,7 @@ public class GameController : MonoBehaviour
         enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
     }
 
+    // Function to choose card from hand and save value
     public IEnumerator ChooseCard(int index)
     {
         spots.Push(player.Pop(index));  // 0 needs to be the card's index
@@ -107,6 +118,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    // Function for enemy to take turn
     IEnumerator EnemyTurn()
     {
         if(condition == 1)
@@ -126,11 +138,13 @@ public class GameController : MonoBehaviour
         }
     }
 
+    // Function to remove card from hand
     public void RemoveCard(int index)
     {
         player.Push(spots.Pop(index));
     }
 
+    // Function when victory condition met
     IEnumerator Victory()
     {
         if(condition == 1)
@@ -142,6 +156,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    // Function when defeat condition met
     IEnumerator Defeat()
     {
         if(condition == 1)
