@@ -8,6 +8,13 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    /*PositionSaver playerPosData;
+    private void Awake()
+    {
+        playerPosData = FindObjectOfType<PositionSaver>();
+        playerPosData.PlayerPosLoad();
+    }*/
+
     Vector2 movement;
 
     void Start()

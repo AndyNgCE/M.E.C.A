@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour
         {
             card3 = spots.HandValue() - card1 - card2;
         }
-
+// int effect = card1 + card2 + card3
         if(spots.CardCount >= 3)
         {
             Debug.Log("Deal Card Damage!");
@@ -110,6 +110,15 @@ public class GameController : MonoBehaviour
             DealDamage(card2);
             //yield return new WaitForSeconds(0.5f);
             DealDamage(card3);
+
+            // if index+2 check index if index 9=<x=<13
+            //dealDamage function(.5*(card1+card2+card3))
+            // cooldownH++
+            // cooldown M and E --
+            //if index + 2 check index if index 4 =< x =< 8
+            // add (1.5-cooldown)*(card+card1+card2) to health
+            //if index + 2 check index if index 0 =< x =< 3
+            //{}
             if(enemyCurrentHealth > 0)
             {
                 StartCoroutine(EnemyTurn());
@@ -119,7 +128,7 @@ public class GameController : MonoBehaviour
     }
 
     // Function for enemy to take turn
-    IEnumerator EnemyTurn()
+    IEnumerator EnemyTurn(/*int index card 1*/)
     {
         if(condition == 1)
         {
