@@ -5,7 +5,7 @@ public class SceneSwapper : MonoBehaviour
 {
     void Start()
     {
-        //Set the tag of this GameObject to Player
+        //Set the tag of this GameObject to Enemy for patrollers
         gameObject.tag = "Enemy";
     }
 

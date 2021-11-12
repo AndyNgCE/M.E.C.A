@@ -10,7 +10,7 @@ public class PositionSaver : MonoBehaviour
     {
         if(PlayerPrefs.GetInt("Saved") == 1 && PlayerPrefs.GetInt("TimeToLoad") == 1)
         {
-            // Set current player Xand Y coordinates
+            // Set current player X and Y coordinates
             float pX = player.transform.position.x;
             float pY = player.transform.position.y;
 

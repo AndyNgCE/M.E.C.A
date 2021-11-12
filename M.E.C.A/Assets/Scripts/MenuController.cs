@@ -19,9 +19,10 @@ public class MenuController : MonoBehaviour
 
     public void Play()
     {
-        // clears saved position data for new games
+        // clears saved data for new games
         /*PlayerPrefs.DeleteKey("p_x");
         PlayerPrefs.DeleteKey("p_y");
+        PlayerPrefs.DeleteKey("HP");
         PlayerPrefs.DeleteKey("TimetoLoad");
         PlayerPrefs.DeleteKey("Saved");*/
         SceneManager.LoadScene(sceneName: "Travel Scene");

@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     // Player health
     public int maxHealth = 100;
     public int currentHealth = 100;
+    //public int currenthealth = GlobalControl.Instance.HP;
     public Image healthBar;
 
     // Enemy Health
@@ -158,6 +159,7 @@ public class GameController : MonoBehaviour
     {
         if(condition == 1)
         {
+            // GlobalControl.Instance.HP = currenthealth;
             winnerText.text = "VICTORY!!!"; // return to map scene with current progress
             condition = 0;
             yield return new WaitForSeconds(3.5f);
