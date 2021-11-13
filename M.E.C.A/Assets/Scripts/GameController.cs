@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     // Player health
     public int maxHealth = 100;
     public int currentHealth = 100;
+    //public int currenthealth = GlobalControl.Instance.HP;
     public Image healthBar;
 
     // Enemy Health
@@ -100,7 +101,7 @@ public class GameController : MonoBehaviour
         {
             card3 = spots.HandValue() - card1 - card2;
         }
-
+// int effect = card1 + card2 + card3
         if(spots.CardCount >= 3)
         {
             Debug.Log("Deal Card Damage!");
@@ -126,7 +127,7 @@ public class GameController : MonoBehaviour
     }
 
     // Function for enemy to take turn
-    IEnumerator EnemyTurn()
+    IEnumerator EnemyTurn(/*int index card 1*/)
     {
         if(condition == 1)
         {
@@ -156,6 +157,7 @@ public class GameController : MonoBehaviour
     {
         if(condition == 1)
         {
+            // GlobalControl.Instance.HP = currenthealth;
             winnerText.text = "VICTORY!!!"; // return to map scene with current progress
             condition = 0;
             yield return new WaitForSeconds(3.5f);
