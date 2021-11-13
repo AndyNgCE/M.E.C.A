@@ -104,18 +104,25 @@ public class GameController : MonoBehaviour
         if(spots.CardCount >= 3)
         {
             Debug.Log("Deal Card Damage!");
-            //yield return new WaitForSeconds(0.5f);
-            DealDamage(card1);
-            //yield return new WaitForSeconds(0.5f);
-            DealDamage(card2);
-            //yield return new WaitForSeconds(0.5f);
-            DealDamage(card3);
+            
+            StartCoroutine(DamageStep());
+
             if(enemyCurrentHealth > 0)
             {
                 StartCoroutine(EnemyTurn());
                 yield return new WaitForSeconds(0.5f);
             }
         }
+    }
+
+    public IEnumerator DamageStep()
+    {
+        DealDamage(card1);
+        yield return new WaitForSeconds(0.5f);
+        DealDamage(card2);
+        yield return new WaitForSeconds(0.5f);
+        DealDamage(card3);
+        yield return new WaitForSeconds(0.5f);
     }
 
     // Function for enemy to take turn
