@@ -20,11 +20,11 @@ public class MenuController : MonoBehaviour
     public void Play()
     {
         // clears saved data for new games
-        /*PlayerPrefs.DeleteKey("p_x");
+        PlayerPrefs.DeleteKey("p_x");
         PlayerPrefs.DeleteKey("p_y");
         PlayerPrefs.DeleteKey("HP");
         PlayerPrefs.DeleteKey("TimetoLoad");
-        PlayerPrefs.DeleteKey("Saved");*/
+        PlayerPrefs.DeleteKey("Saved");
         Debug.Log("PLAY");
         SceneManager.LoadScene(sceneName: "Travel Scene");
     }
@@ -32,7 +32,7 @@ public class MenuController : MonoBehaviour
     // For continue option
     public void loadGame()
     {
-        //SceneManager.LoadScene(sceneName: "Travel Scene");
+        SceneManager.LoadScene(sceneName: "Travel Scene");
         Debug.Log("LOAD");
     }
 
