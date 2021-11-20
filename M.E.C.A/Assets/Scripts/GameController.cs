@@ -30,18 +30,18 @@ public class GameController : MonoBehaviour
     public int firstNum = 0;
 
     // Player health
-    public int maxHealth = 100;
-    public int currentHealth = 100;
+    public double maxHealth = 300;
+    public double currentHealth = 300;
     //public int currenthealth = GlobalControl.Instance.HP;
     public Image healthBar;
 
     // Enemy Health
-    public int enemyMaxHealth = 100;
-    public int enemyCurrentHealth = 100;
+    public double enemyMaxHealth = 300;
+    public double enemyCurrentHealth = 300;
     public Image enemyHealthBar;
 
     // Cards played
-    int damageToTake;
+    double damageToTake;
     // public int[] values = new int[3];
     public int card1;
     public int card2;
@@ -69,7 +69,7 @@ public class GameController : MonoBehaviour
     }
 
     // Function to deal damage to player
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(double damageAmount)
     {
         currentHealth -= damageAmount;
         healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
@@ -108,22 +108,70 @@ public class GameController : MonoBehaviour
             
             StartCoroutine(DamageStep());
 
-            if(enemyCurrentHealth > 0)
+            yield return new WaitForSeconds(0.5f);
+
+            /*if(enemyCurrentHealth >= 0)
             {
+                Debug.Log("Enemy Health: " + enemyCurrentHealth);
                 StartCoroutine(EnemyTurn());
                 yield return new WaitForSeconds(0.5f);
-            }
+            }*/
         }
     }
 
     public IEnumerator DamageStep()
     {
-        DealDamage(card1);
+        if(card1 < 21)
+        {
+            DealDamage(card1);
+            yield return new WaitForSeconds(0.5f);
+            DealDamage(card2);
+            yield return new WaitForSeconds(0.5f);
+            DealDamage(card3);
+            yield return new WaitForSeconds(0.5f);
+
+            Debug.Log("HEAL!!!!!!!!");
+            currentHealth = currentHealth + (card1 + card2 + card3) * 0.5;
+            Debug.Log("CHECKING OUR HEALTH AFTER HEALING RIGHT HERE: " + currentHealth);
+            yield return new WaitForSeconds(0.5f);
+        }
+        else if(card1 > 21 && card1 < 29)
+        {
+            DealDamage(card1);
+            yield return new WaitForSeconds(0.5f);
+            DealDamage(card2);
+            yield return new WaitForSeconds(0.5f);
+            DealDamage(card3);
+            yield return new WaitForSeconds(0.5f);
+        }
+        else
+        {
+            DealDamage(card1);
+            yield return new WaitForSeconds(0.5f);
+            DealDamage(card2);
+            yield return new WaitForSeconds(0.5f);
+            DealDamage(card3);
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        /*DealDamage(card1);
         yield return new WaitForSeconds(0.5f);
         DealDamage(card2);
         yield return new WaitForSeconds(0.5f);
         DealDamage(card3);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f);*/
+
+        StartCoroutine(EnemyCurrentHealthCheck());
+    }
+
+    public IEnumerator EnemyCurrentHealthCheck()
+    {
+        if(enemyCurrentHealth >= 0)
+        {
+            Debug.Log("Enemy Health: " + enemyCurrentHealth);
+            StartCoroutine(EnemyTurn());
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     // Function for enemy to take turn
@@ -131,14 +179,21 @@ public class GameController : MonoBehaviour
     {
         if(condition == 1)
         {
-            yield return new WaitForSeconds(1f);
+            //yield return new WaitForSeconds(1f);
+            Debug.Log("Opponent's turn");
             playerTurnText.text = "OPPONENT'S TURN";
             // make OnMouseDown for cards false
             yield return new WaitForSeconds(0.5f);
             for(int i = 0; i < 3; i++)
             {
-                //yield return new WaitForSeconds(0.5f);
-                damageToTake = UnityEngine.Random.Range(6, 20);
+                yield return new WaitForSeconds(0.5f);
+                damageToTake = UnityEngine.Random.Range(15, 45);
+
+                if(card1 > 21 && card1 < 29)
+                {
+                    damageToTake = damageToTake * 0.5;
+                }
+
                 TakeDamage(damageToTake);
             }
             yield return new WaitForSeconds(1f);

@@ -283,8 +283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fce0a5083addec4bad437d9c82a126f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: {x: -2.75, y: -4, z: 0}
-  cardOffset: 0.75
+  start: {x: -2.75, y: -3.75, z: 0}
+  cardOffset: 0.85
   cardPrefab: {fileID: 1519256799}
 --- !u!114 &207370518
 MonoBehaviour:
@@ -857,11 +857,11 @@ MonoBehaviour:
   prevNum: 0
   numCardsPlayed: 0
   firstNum: 0
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 300
+  currentHealth: 300
   healthBar: {fileID: 993263653}
-  enemyMaxHealth: 100
-  enemyCurrentHealth: 100
+  enemyMaxHealth: 300
+  enemyCurrentHealth: 300
   enemyHealthBar: {fileID: 1784638771}
   card1: 0
   card2: 0
@@ -1827,6 +1827,58 @@ PrefabInstance:
       propertyPath: cardNum
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 46d9309baa9db9c4d9ae5f4fd6b229f4, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f75cc628b7cc104eb95c82953d7aa9b, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: e9868e34582eee5458fcc454a01b998b, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: e39f17e57d5d4174fb1b1eca352d9c86, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ee706443d4627e4fb177ff057e8b5f5, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: be5ce3c681c9ab042862b0f3b6b3d049, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: a144c37fdf1c71f49a000c267bb34a47, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: dd43a67edb02e7a4f999add74ffb3fae, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f798269308cb22448e9f379dff8454e, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 69926ba044617d74a80edd0024a57f00, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: 31843060039aba04b992e295b59048c2, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[11]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c94ef38544d1b44d909fd5db4dd0430, type: 3}
+    - target: {fileID: 5014492373846855965, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
+      propertyPath: faces.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: f6414a70a29699147a626f0aebe624c2, type: 3}
     - target: {fileID: 5014492373846855967, guid: 530a52b9aacfe9f478269fd7a6bf7daf, type: 3}
       propertyPath: m_RootOrder
       value: 7
