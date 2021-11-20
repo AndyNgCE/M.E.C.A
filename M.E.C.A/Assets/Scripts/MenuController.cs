@@ -25,6 +25,7 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.DeleteKey("HP");
         PlayerPrefs.DeleteKey("TimetoLoad");
         PlayerPrefs.DeleteKey("Saved");
+        PlayerPrefs.DeleteKey("p_scene");
         Debug.Log("PLAY");
         SceneManager.LoadScene(sceneName: "Travel Scene");
     }
@@ -32,8 +33,9 @@ public class MenuController : MonoBehaviour
     // For continue option
     public void loadGame()
     {
-        SceneManager.LoadScene(sceneName: "Travel Scene");
-        Debug.Log("LOAD");
+        string goToScene = PlayerPrefs.GetString("p_Scene");
+        SceneManager.LoadScene(sceneName: goToScene);
+        Debug.Log(goToScene);
     }
 
 
