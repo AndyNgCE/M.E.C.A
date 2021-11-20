@@ -8,14 +8,15 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    /*PositionSaver playerPosData;
+    PositionSaver playerPosData;
     private void Awake()
     {
+        Debug.Log("AWAKE");
         playerPosData = FindObjectOfType<PositionSaver>();
         playerPosData.PlayerPosLoad();
-    }*/
+    }
 
-    /*GlobalControl playerHPData;
+   /* GlobalControl playerHPData;
  private void Awake()
  {
      playerPosData = FindObjectOfType<GlobalControl>();

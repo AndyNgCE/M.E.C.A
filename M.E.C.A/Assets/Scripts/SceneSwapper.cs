@@ -3,10 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwapper : MonoBehaviour
 {
+    PositionSaver playerPosData;
+
     void Start()
     {
         //Set the tag of this GameObject to Enemy for patrollers
         gameObject.tag = "Enemy";
+        playerPosData = FindObjectOfType<PositionSaver>();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -14,6 +17,7 @@ public class SceneSwapper : MonoBehaviour
         if(col.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Triggered by Player");
+            playerPosData.playerPosSave();
             SceneManager.LoadScene(sceneName: "CombatScene");
         }
     }

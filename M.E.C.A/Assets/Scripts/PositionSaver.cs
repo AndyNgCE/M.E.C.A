@@ -16,6 +16,8 @@ public class PositionSaver : MonoBehaviour
 
             pX = PlayerPrefs.GetFloat("p_x");
             pY = PlayerPrefs.GetFloat("p_y");
+            Debug.Log("pX = " + pX);
+            Debug.Log("pY = " + pY);
             player.transform.position = new Vector2(pX, pY);
             PlayerPrefs.SetInt("TimeToLoad", 0);
             PlayerPrefs.Save();
@@ -26,6 +28,7 @@ public class PositionSaver : MonoBehaviour
         // Save the current X and Y positions of player
         PlayerPrefs.SetFloat("p_x", player.transform.position.x);
         PlayerPrefs.SetFloat("p_y", player.transform.position.y);
+        Debug.Log("Setting floats");
         PlayerPrefs.SetInt("Saved", 1);
         PlayerPrefs.Save();
     }
