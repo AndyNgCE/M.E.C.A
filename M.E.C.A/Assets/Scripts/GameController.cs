@@ -20,7 +20,10 @@ public class GameController : MonoBehaviour
     // Defeat overlay
     public GameObject restartLevel;
     public GameObject quitLevel;
-    public GameObject combatOverBlock;
+    public GameObject menuFade;
+    public GameObject gameMenu;
+    public GameObject settingsButton;
+    public int menuCheck = 0;
 
     int condition = 1; // 0 when round over
     int turn = 1;
@@ -187,7 +190,7 @@ public class GameController : MonoBehaviour
             for(int i = 0; i < 3; i++)
             {
                 yield return new WaitForSeconds(0.5f);
-                damageToTake = UnityEngine.Random.Range(15, 45);
+                damageToTake = UnityEngine.Random.Range(25, 45);
 
                 if(card1 > 21 && card1 < 29)
                 {
@@ -230,7 +233,8 @@ public class GameController : MonoBehaviour
             yield return new WaitForSeconds(3.5f);
             restartLevel.SetActive(true);
             quitLevel.SetActive(true);
-            combatOverBlock.SetActive(true);
+            menuFade.SetActive(true);
+            gameMenu.SetActive(true);
             //SceneManager.LoadScene(sceneName: "MainMenu");
         }
     }
@@ -250,7 +254,7 @@ public class GameController : MonoBehaviour
         StartCoroutine(StartGame());
     }
 
-    void Update()
+    void Update() //Check if enemy hp <= 0
     {
         if(enemyCurrentHealth <= 0)
         {
@@ -261,13 +265,37 @@ public class GameController : MonoBehaviour
         {
             StartCoroutine(Defeat());
         }
+
+        if (Input.GetKeyDown("escape"))
+        {
+            menuCheck++;
+            if(menuCheck % 2 == 1)
+            {
+                restartLevel.SetActive(true);
+                quitLevel.SetActive(true);
+                menuFade.SetActive(true);
+                gameMenu.SetActive(true);
+                settingsButton.SetActive(true);
+            }
+            else
+            {
+                restartLevel.SetActive(false);
+                quitLevel.SetActive(false);
+                menuFade.SetActive(false);
+                gameMenu.SetActive(false);
+                settingsButton.SetActive(false);
+            }
+        }
     }
 
     IEnumerator StartGame()
     {
         restartLevel.SetActive(false);
         quitLevel.SetActive(false);
-        combatOverBlock.SetActive(false);
+        menuFade.SetActive(false);
+        gameMenu.SetActive(false);
+        settingsButton.SetActive(false);
+        menuCheck = 0;
         turnText.text = "TURN " + turn;
         turn++;
         playerTurnText.text = "YOUR TURN";

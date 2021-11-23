@@ -9,6 +9,9 @@ public class MenuController : MonoBehaviour
     public GameObject volumeSlider;
     public GameObject musicSlider;
     public GameObject settingsFade;
+    public GameObject settingsText;
+    public GameObject rectangle;
+    public GameObject quitButton;
 
     public void Quit()
     {
@@ -44,5 +47,28 @@ public class MenuController : MonoBehaviour
         volumeSlider.SetActive(true);
         musicSlider.SetActive(true);
         settingsFade.SetActive(true);
+        rectangle.SetActive(true);
+        settingsText.SetActive(true);
+        quitButton.SetActive(true);
+    }
+
+    public void SettingsMenuClose()
+    {
+        volumeSlider.SetActive(false);
+        musicSlider.SetActive(false);
+        settingsFade.SetActive(false);
+        rectangle.SetActive(false);
+        settingsText.SetActive(false);
+        quitButton.SetActive(false);
+    }
+
+    void Start()
+    {
+        volumeSlider.SetActive(false);
+        musicSlider.SetActive(false);
+        settingsFade.SetActive(false);
+        rectangle.SetActive(false);
+        settingsText.SetActive(false);
+        quitButton.SetActive(false);
     }
 }
