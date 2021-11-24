@@ -13,6 +13,11 @@ public class MenuController : MonoBehaviour
     public GameObject rectangle;
     public GameObject quitButton;
 
+    public GameObject settings;
+
+    public Slider soundBar;
+    public Slider musicBar;
+
     public void Quit()
     {
         Debug.Log("QUIT");
@@ -44,31 +49,43 @@ public class MenuController : MonoBehaviour
 
     public void SettingsMenu()
     {
-        volumeSlider.SetActive(true);
+        /*volumeSlider.SetActive(true);
         musicSlider.SetActive(true);
         settingsFade.SetActive(true);
         rectangle.SetActive(true);
         settingsText.SetActive(true);
-        quitButton.SetActive(true);
+        quitButton.SetActive(true);*/
+        //soundBar.interactable = true;
+        settings.SetActive(true);
     }
 
     public void SettingsMenuClose()
     {
-        volumeSlider.SetActive(false);
+        /*volumeSlider.SetActive(false);
         musicSlider.SetActive(false);
         settingsFade.SetActive(false);
         rectangle.SetActive(false);
         settingsText.SetActive(false);
-        quitButton.SetActive(false);
+        quitButton.SetActive(false);*/
+        settings.SetActive(false);
     }
 
     void Start()
     {
-        volumeSlider.SetActive(false);
+        /*volumeSlider.SetActive(false);
         musicSlider.SetActive(false);
         settingsFade.SetActive(false);
         rectangle.SetActive(false);
         settingsText.SetActive(false);
-        quitButton.SetActive(false);
+        quitButton.SetActive(false);*/
+        settings.SetActive(false);
+        soundBar.onValueChanged.AddListener (delegate {ValueChangeCheck ();});
+        musicBar.onValueChanged.AddListener (delegate {ValueChangeCheck ();});
+    }
+
+    public void ValueChangeCheck()
+    {
+        Debug.Log(soundBar.value);
+        Debug.Log(musicBar.value);
     }
 }

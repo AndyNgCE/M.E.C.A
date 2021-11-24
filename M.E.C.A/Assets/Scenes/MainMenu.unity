@@ -1288,6 +1288,9 @@ MonoBehaviour:
   settingsText: {fileID: 1281534200}
   rectangle: {fileID: 673578576}
   quitButton: {fileID: 291387848}
+  settings: {fileID: 118954070535350843}
+  soundBar: {fileID: 0}
+  musicBar: {fileID: 0}
 --- !u!1 &1687588686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,3 +2132,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fbf9a772b48b95458fcfdf5143a792e, type: 3}
+--- !u!1 &118954070535350843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 118954070901677776, guid: 1fbf9a772b48b95458fcfdf5143a792e, type: 3}
+  m_PrefabInstance: {fileID: 118954070535350842}
+  m_PrefabAsset: {fileID: 0}

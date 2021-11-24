@@ -17,6 +17,16 @@ public class GameController : MonoBehaviour
     public Text turnText;
     public Text playerTurnText;
 
+    public Text damage1;
+    public Text damage2;
+    public Text damage3;
+
+    public Text playerDamage1;
+    public Text playerDamage2;
+    public Text playerDamage3;
+
+    public Text heal1;
+
     // Defeat overlay
     public GameObject restartLevel;
     public GameObject quitLevel;
@@ -46,9 +56,11 @@ public class GameController : MonoBehaviour
     // Cards played
     double damageToTake;
     // public int[] values = new int[3];
-    public int card1;
-    public int card2;
-    public int card3;
+    public double card1;
+    public double card2;
+    public double card3;
+
+    public GameObject cardBlocker;
 
     //Starts Player's turn
     public void StartTurn()
@@ -80,7 +92,7 @@ public class GameController : MonoBehaviour
     }
 
     // Function to deal damage to enemy
-    public void DealDamage(int damageAmount)
+    public void DealDamage(double damageAmount)
     {
         Debug.Log("Damage Dealt");
         enemyCurrentHealth -= damageAmount;
@@ -108,6 +120,8 @@ public class GameController : MonoBehaviour
         if(spots.CardCount >= 3)
         {
             Debug.Log("Deal Card Damage!");
+
+            cardBlocker.SetActive(true);
             
             StartCoroutine(DamageStep());
 
@@ -124,37 +138,57 @@ public class GameController : MonoBehaviour
 
     public IEnumerator DamageStep()
     {
-        if(card1 < 21)
+        if(card1 == 21 || card1 == 24 || card1 == 27 || card1 == 30) // heal cards
         {
             DealDamage(card1);
+            damage1.text = "-" + (int)card1;
             yield return new WaitForSeconds(0.5f);
+            damage1.text = "";
             DealDamage(card2);
+            damage2.text = "-" + (int)card2;
             yield return new WaitForSeconds(0.5f);
+            damage2.text = "";
             DealDamage(card3);
+            damage3.text = "-" + (int)card3;
             yield return new WaitForSeconds(0.5f);
+            damage3.text = "";
 
             Debug.Log("HEAL!!!!!!!!");
-            currentHealth = currentHealth + (card1 + card2 + card3) * 0.5;
+            currentHealth = currentHealth + ((card1 + card2 + card3) * 0.5);
             Debug.Log("CHECKING OUR HEALTH AFTER HEALING RIGHT HERE: " + currentHealth);
+            healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
+            heal1.text = "+" + (int)((card1 + card2 + card3) * 0.5);
             yield return new WaitForSeconds(0.5f);
         }
-        else if(card1 > 21 && card1 < 29)
+        else if(card1 == 22 || card1 == 25 || card1 == 28 || card1 == 31) // block cards
         {
             DealDamage(card1);
+            damage1.text = "-" + (int)card1;
             yield return new WaitForSeconds(0.5f);
+            damage1.text = "";
             DealDamage(card2);
+            damage2.text = "-" + (int)card2;
             yield return new WaitForSeconds(0.5f);
+            damage2.text = "";
             DealDamage(card3);
+            damage3.text = "-" + (int)card3;
             yield return new WaitForSeconds(0.5f);
+            damage3.text = "";
         }
-        else
+        else // damage cards
         {
-            DealDamage(card1);
+            DealDamage(card1 * 1.25);
+            damage1.text = "-" + (int)(card1 * 1.25);
             yield return new WaitForSeconds(0.5f);
-            DealDamage(card2);
+            damage1.text = "";
+            DealDamage(card2 * 1.25);
+            damage2.text = "-" + (int)(card2 * 1.25);
             yield return new WaitForSeconds(0.5f);
-            DealDamage(card3);
+            damage2.text = "";
+            DealDamage(card3 * 1.25);
+            damage3.text = "-" + (int)(card3 * 1.25);
             yield return new WaitForSeconds(0.5f);
+            damage3.text = "";
         }
 
         /*DealDamage(card1);
@@ -174,6 +208,7 @@ public class GameController : MonoBehaviour
             Debug.Log("Enemy Health: " + enemyCurrentHealth);
             StartCoroutine(EnemyTurn());
             yield return new WaitForSeconds(0.5f);
+            heal1.text = "";
         }
     }
 
@@ -182,22 +217,38 @@ public class GameController : MonoBehaviour
     {
         if(condition == 1)
         {
-            //yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             Debug.Log("Opponent's turn");
             playerTurnText.text = "OPPONENT'S TURN";
             // make OnMouseDown for cards false
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
             for(int i = 0; i < 3; i++)
             {
-                yield return new WaitForSeconds(0.5f);
                 damageToTake = UnityEngine.Random.Range(25, 45);
 
-                if(card1 > 21 && card1 < 29)
+                if(card1 == 22 || card1 == 25 || card1 == 28 || card1 == 31)
                 {
                     damageToTake = damageToTake * 0.5;
                 }
 
                 TakeDamage(damageToTake);
+                if(i == 0)
+                {
+                    playerDamage1.text = "-" + damageToTake;
+                }
+                else if(i ==1)
+                {
+                    playerDamage2.text = "-" + damageToTake;
+                }
+                else
+                {
+                    playerDamage3.text = "-" + damageToTake;
+                }
+
+                yield return new WaitForSeconds(0.5f);
+                playerDamage1.text = "";
+                playerDamage2.text = "";
+                playerDamage3.text = "";
             }
             yield return new WaitForSeconds(1f);
             StartTurn();
@@ -252,6 +303,13 @@ public class GameController : MonoBehaviour
     void Start()
     {
         StartCoroutine(StartGame());
+        damage1.text = "";
+        damage2.text = "";
+        damage3.text = "";
+        playerDamage1.text = "";
+        playerDamage2.text = "";
+        playerDamage3.text = "";
+        heal1.text = "";
     }
 
     void Update() //Check if enemy hp <= 0
@@ -295,6 +353,7 @@ public class GameController : MonoBehaviour
         menuFade.SetActive(false);
         gameMenu.SetActive(false);
         settingsButton.SetActive(false);
+        cardBlocker.SetActive(false);
         menuCheck = 0;
         turnText.text = "TURN " + turn;
         turn++;

@@ -75,27 +75,27 @@ public class DeckModel : MonoBehaviour //CardStack
 
             if(cardVal == 2)
             {
-                cardVal = 14;
+                cardVal = 20;
             }
             else if(cardVal == 3)
             {
-                cardVal = 16;
+                cardVal = 21;
             }
             else if(cardVal == 4)
             {
-                cardVal = 18;
+                cardVal = 22;
             }
             else if(cardVal == 5)
             {
-                cardVal = 20;
+                cardVal = 23;
             }
             else if(cardVal == 6)
             {
-                cardVal = 22;
+                cardVal = 24;
             }
             else if(cardVal == 7)
             {
-                cardVal = 24;
+                cardVal = 25;
             }
             else if(cardVal == 8)
             {
@@ -103,27 +103,27 @@ public class DeckModel : MonoBehaviour //CardStack
             }
             else if(cardVal == 9)
             {
-                cardVal = 28;
+                cardVal = 27;
             }
             else if(cardVal == 10)
             {
-                cardVal = 30;
+                cardVal = 28;
             }
             else if(cardVal == 11)
             {
-                cardVal = 32;
+                cardVal = 29;
             }
             else if(cardVal == 12)
             {
-                cardVal = 34;
+                cardVal = 30;
             }
             else if(cardVal == 13)
             {
-                cardVal = 36;
+                cardVal = 31;
             }
             else if(cardVal == 14)
             {
-                cardVal = 38;
+                cardVal = 32;
             }
 
             total = total + cardVal;
