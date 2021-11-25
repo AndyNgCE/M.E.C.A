@@ -372,15 +372,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479118126746904556, guid: cb168fca4ecd84f41ae9c51c8bd63354, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2212.1697
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1479118126746904556, guid: cb168fca4ecd84f41ae9c51c8bd63354, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 959.55176
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1479118126746904556, guid: cb168fca4ecd84f41ae9c51c8bd63354, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1125.7844
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1479118126746904556, guid: cb168fca4ecd84f41ae9c51c8bd63354, type: 3}
       propertyPath: m_LocalRotation.w
@@ -388,15 +388,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479118126746904556, guid: cb168fca4ecd84f41ae9c51c8bd63354, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1479118126746904556, guid: cb168fca4ecd84f41ae9c51c8bd63354, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1479118126746904556, guid: cb168fca4ecd84f41ae9c51c8bd63354, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1479118126746904556, guid: cb168fca4ecd84f41ae9c51c8bd63354, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -662,6 +662,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d947ddc741aa3a6449282c7c95088032, type: 3}
+--- !u!1 &1719438234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1479118126746904554, guid: cb168fca4ecd84f41ae9c51c8bd63354, type: 3}
+  m_PrefabInstance: {fileID: 1104803107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1719438237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719438234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ab5616efeed274082d38369378c73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3424588219277417628
 PrefabInstance:
   m_ObjectHideFlags: 0
