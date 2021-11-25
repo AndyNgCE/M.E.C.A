@@ -33,6 +33,7 @@ public class PositionSaver : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    // Used to identify when to call in saved data
     public void PlayerPosLoad()
     {
         PlayerPrefs.SetInt("TimeToLoad", 1);

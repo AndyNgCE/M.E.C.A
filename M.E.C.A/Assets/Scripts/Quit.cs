@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Quit : MonoBehaviour
 {
-    PositionSaver playerPosData;
+    /*PositionSaver playerPosData;
 
     void Start()
     {
        playerPosData = FindObjectOfType<PositionSaver>();
-    }
+    }*/
 
     public void QuitGame()
     {
         Debug.Log("QUIT");
         //Application.Quit();
-        playerPosData.playerPosSave();
+        //playerPosData.playerPosSave();
         SceneManager.LoadScene(sceneName: "MainMenu");
         //UnityEditor.EditorApplication.isPlaying = false;
     }

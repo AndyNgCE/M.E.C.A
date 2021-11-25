@@ -6,7 +6,8 @@ public class GlobalControl : MonoBehaviour
 {
     public static GlobalControl Instance;
 
-    public int HP = 100;
+    // Base health of player starts at 300. This valuse should change between battles
+    public int HP = 300;
     /*private void Start()
     {
         if (PlayerPrefs.GetInt("Saved") == 1 && PlayerPrefs.GetInt("TimeToLoad") == 1)
@@ -30,6 +31,7 @@ public void PlayerPosLoad()
         PlayerPrefs.Save();
     }
     */
+    //Want to keep the variable alive through combat and menu scene swap
     void Awake()
     {
         if (Instance == null)

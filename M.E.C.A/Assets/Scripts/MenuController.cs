@@ -41,6 +41,13 @@ public class MenuController : MonoBehaviour
     // For continue option
     public void loadGame()
     {
+        // Removes last battle position for true restart of level
+        PlayerPrefs.DeleteKey("p_x");
+        PlayerPrefs.DeleteKey("p_y");
+        PlayerPrefs.DeleteKey("HP");
+        PlayerPrefs.DeleteKey("TimetoLoad");
+        PlayerPrefs.DeleteKey("Saved");
+        // Pull last known level played
         string goToScene = PlayerPrefs.GetString("p_Scene");
         SceneManager.LoadScene(sceneName: goToScene);
         Debug.Log(goToScene);
