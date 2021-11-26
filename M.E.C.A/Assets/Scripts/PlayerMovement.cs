@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    private SpriteRenderer flipper;
+
     PositionSaver playerPosData;
     private void Awake()
     {
@@ -28,12 +30,21 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        flipper = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if(Input.GetAxisRaw("Horizontal") > 0)
+        {
+            flipper.flipX = false;
+        }
+        else if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            flipper.flipX = true;
+        }
     }
 
 
