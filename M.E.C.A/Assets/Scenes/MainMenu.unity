@@ -585,6 +585,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &575016872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3170998481314187315, guid: 1fbf9a772b48b95458fcfdf5143a792e, type: 3}
+  m_PrefabInstance: {fileID: 118954070535350842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &661762785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3170998480445022813, guid: 1fbf9a772b48b95458fcfdf5143a792e, type: 3}
@@ -1289,8 +1300,8 @@ MonoBehaviour:
   rectangle: {fileID: 673578576}
   quitButton: {fileID: 291387848}
   settings: {fileID: 118954070535350843}
-  soundBar: {fileID: 0}
-  musicBar: {fileID: 0}
+  soundBar: {fileID: 575016872}
+  musicBar: {fileID: 1997532737}
 --- !u!1 &1687588686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,6 +1744,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977223982}
   m_CullTransparentMesh: 1
+--- !u!114 &1997532737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 61423735329353101, guid: 1fbf9a772b48b95458fcfdf5143a792e, type: 3}
+  m_PrefabInstance: {fileID: 118954070535350842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2020103365
 GameObject:
   m_ObjectHideFlags: 0
