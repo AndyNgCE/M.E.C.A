@@ -269,6 +269,10 @@ public class GameController : MonoBehaviour
                     damageToTake = damageToTake * blockMultiplier;
                 }
 
+                if(enemyHealthMark >= 180)
+                {
+                    damageToTake = damageToTake * 1.1;
+                }
                 TakeDamage(damageToTake);
 
                 damageCumulative = damageCumulative + damageToTake;
@@ -308,6 +312,7 @@ public class GameController : MonoBehaviour
             if(true)
             {
                 currentHealth -= 10;
+                healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
                 playerDamage1.text = "-10";
                 yield return new WaitForSeconds(1f);
                 playerDamage1.text = "";
@@ -315,6 +320,14 @@ public class GameController : MonoBehaviour
 
             // passively blocks 5 damage
             // regenerates health
+            if(false)
+            {
+                enemyCurrentHealth += 10;
+                enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
+                heal2.text = "+10";
+                yield return new WaitForSeconds(1f);
+                heal2.text = "";
+            }
 
             StartTurn();
         }
@@ -426,7 +439,7 @@ public class GameController : MonoBehaviour
         turn++;
         playerTurnText.text = "YOUR TURN";
         condition = 1;
-        for(int i = 0; i < 7; i++)
+        for(int i = 0; i < 5; i++)
         {
             player.Push(dealer.Pop(0));
             yield return new WaitForSeconds(0.1f);
