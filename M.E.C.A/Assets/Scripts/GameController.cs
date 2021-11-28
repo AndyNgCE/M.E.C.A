@@ -34,6 +34,8 @@ public class GameController : MonoBehaviour
     public GameObject menuFade;
     public GameObject gameMenu;
     public GameObject settingsButton;
+
+    string fromScene = PlayerPrefs.GetString("p_Scene");
     public int menuCheck = 0;
 
     int condition = 1; // 0 when round over
