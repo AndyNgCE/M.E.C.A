@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GlobalControl : MonoBehaviour
+public class GlobalControl
 {
-    public static GlobalControl Instance;
 
     // Base health of player starts at 300. This valuse should change between battles
     public int HP = 300;
@@ -32,16 +31,4 @@ public void PlayerPosLoad()
     }
     */
     //Want to keep the variable alive through combat and menu scene swap
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            Instance = this;
-        }
-        else if (Instance != this)
-        {
-            Destroy(gameObject);
-        }
-    }
 }
