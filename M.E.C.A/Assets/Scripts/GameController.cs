@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
     public GameObject gameMenu;
     public GameObject settingsButton;
 
-    string fromScene = PlayerPrefs.GetString("p_Scene");
+    string fromScene;
     public int menuCheck = 0;
 
     int condition = 1; // 0 when round over
@@ -367,6 +367,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        fromScene = PlayerPrefs.GetString("p_Scene");
         StartCoroutine(StartGame());
         damage1.text = "";
         damage2.text = "";
