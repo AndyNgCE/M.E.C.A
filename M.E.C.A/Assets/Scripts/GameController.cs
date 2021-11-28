@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     public Text playerDamage3;
 
     public Text heal1;
+    public Text heal2;
 
     // Defeat overlay
     public GameObject restartLevel;
@@ -52,6 +53,7 @@ public class GameController : MonoBehaviour
     public double enemyMaxHealth = 300;
     public double enemyCurrentHealth = 300;
     public Image enemyHealthBar;
+    public double enemyHealthMark;
 
     // Cards played
     double damageToTake;
@@ -59,6 +61,16 @@ public class GameController : MonoBehaviour
     public double card1;
     public double card2;
     public double card3;
+
+    public double healCount = 0;
+    public double blockCount = 0;
+    public double damageCount = 0;
+
+    public double healMultiplier = 0.5;
+    public double blockMultiplier = 0.3;
+    public double damageMultiplier = 1.25;
+
+    public double damageCumulative = 0;
 
     public GameObject cardBlocker;
 
@@ -95,6 +107,10 @@ public class GameController : MonoBehaviour
     public void DealDamage(double damageAmount)
     {
         Debug.Log("Damage Dealt");
+        /*if(enemyCurrentHealth > 130 && enemyCurrentHealth < 180) // if enemy health 130 < x < 180
+        {
+            damageAmount = damageAmount * 0.8;
+        }*/
         enemyCurrentHealth -= damageAmount;
         enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
     }
@@ -138,8 +154,16 @@ public class GameController : MonoBehaviour
 
     public IEnumerator DamageStep()
     {
+        enemyHealthMark = enemyCurrentHealth;
+
         if(card1 == 21 || card1 == 24 || card1 == 27 || card1 == 30) // heal cards
         {
+            if(enemyHealthMark > 130 && enemyHealthMark < 180)
+            {
+                card1 = card1 * 0.8;
+                card2 = card2 * 0.8;
+                card3 = card3 * 0.8;
+            }
             DealDamage(card1);
             damage1.text = "-" + (int)card1;
             yield return new WaitForSeconds(0.5f);
@@ -154,14 +178,20 @@ public class GameController : MonoBehaviour
             damage3.text = "";
 
             Debug.Log("HEAL!!!!!!!!");
-            currentHealth = currentHealth + ((card1 + card2 + card3) * 0.5);
+            currentHealth = currentHealth + ((card1 + card2 + card3) * healMultiplier);
             Debug.Log("CHECKING OUR HEALTH AFTER HEALING RIGHT HERE: " + currentHealth);
             healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
-            heal1.text = "+" + (int)((card1 + card2 + card3) * 0.5);
+            heal1.text = "+" + (int)((card1 + card2 + card3) * healMultiplier);
             yield return new WaitForSeconds(0.5f);
         }
         else if(card1 == 22 || card1 == 25 || card1 == 28 || card1 == 31) // block cards
         {
+            if(enemyHealthMark > 130 && enemyHealthMark < 180)
+            {
+                card1 = card1 * 0.8;
+                card2 = card2 * 0.8;
+                card3 = card3 * 0.8;
+            }
             DealDamage(card1);
             damage1.text = "-" + (int)card1;
             yield return new WaitForSeconds(0.5f);
@@ -177,16 +207,22 @@ public class GameController : MonoBehaviour
         }
         else // damage cards
         {
-            DealDamage(card1 * 1.25);
-            damage1.text = "-" + (int)(card1 * 1.25);
+            if(enemyHealthMark > 130 && enemyHealthMark < 180)
+            {
+                card1 = card1 * 0.8;
+                card2 = card2 * 0.8;
+                card3 = card3 * 0.8;
+            }
+            DealDamage(card1 * damageMultiplier);
+            damage1.text = "-" + (int)(card1 * damageMultiplier);
             yield return new WaitForSeconds(0.5f);
             damage1.text = "";
-            DealDamage(card2 * 1.25);
-            damage2.text = "-" + (int)(card2 * 1.25);
+            DealDamage(card2 * damageMultiplier);
+            damage2.text = "-" + (int)(card2 * damageMultiplier);
             yield return new WaitForSeconds(0.5f);
             damage2.text = "";
-            DealDamage(card3 * 1.25);
-            damage3.text = "-" + (int)(card3 * 1.25);
+            DealDamage(card3 * damageMultiplier);
+            damage3.text = "-" + (int)(card3 * damageMultiplier);
             yield return new WaitForSeconds(0.5f);
             damage3.text = "";
         }
@@ -228,15 +264,18 @@ public class GameController : MonoBehaviour
 
                 if(card1 == 22 || card1 == 25 || card1 == 28 || card1 == 31)
                 {
-                    damageToTake = damageToTake * 0.5;
+                    damageToTake = damageToTake * blockMultiplier;
                 }
 
                 TakeDamage(damageToTake);
+
+                damageCumulative = damageCumulative + damageToTake;
+
                 if(i == 0)
                 {
                     playerDamage1.text = "-" + damageToTake;
                 }
-                else if(i ==1)
+                else if(i == 1)
                 {
                     playerDamage2.text = "-" + damageToTake;
                 }
@@ -250,7 +289,31 @@ public class GameController : MonoBehaviour
                 playerDamage2.text = "";
                 playerDamage3.text = "";
             }
+
+            if(enemyHealthMark <= 130)
+            {
+                enemyCurrentHealth = enemyCurrentHealth + (damageCumulative * 0.3);
+                heal2.text = "+" + (damageCumulative * 0.3);
+                enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
+            }
+
+            damageCumulative = 0;
             yield return new WaitForSeconds(1f);
+
+            heal2.text = "";
+
+            // 5 health damage at end turn
+            if(true)
+            {
+                currentHealth -= 10;
+                playerDamage1.text = "-10";
+                yield return new WaitForSeconds(1f);
+                playerDamage1.text = "";
+            }
+
+            // passively blocks 5 damage
+            // regenerates health
+
             StartTurn();
         }
     }
@@ -310,6 +373,7 @@ public class GameController : MonoBehaviour
         playerDamage2.text = "";
         playerDamage3.text = "";
         heal1.text = "";
+        heal2.text = "";
     }
 
     void Update() //Check if enemy hp <= 0
