@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class SceneSwapper : MonoBehaviour
 {
     PositionSaver playerPosData;
+    [SerializeField]
+    string destination;
 
     void Start()
     {
@@ -19,7 +21,7 @@ public class SceneSwapper : MonoBehaviour
             Debug.Log("Triggered by Player");
             // used to put the player back after victory
             playerPosData.playerPosSave();
-            SceneManager.LoadScene(sceneName: "CombatScene");
+            SceneManager.LoadScene(sceneName: destination);
         }
     }
 }

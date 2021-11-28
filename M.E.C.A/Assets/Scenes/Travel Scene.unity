@@ -4329,6 +4329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: CombatScene
 --- !u!61 &946590114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4603,6 +4604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: CombatScene
 --- !u!61 &975730302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6276,6 +6278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: CombatScene
 --- !u!1 &1431681448
 GameObject:
   m_ObjectHideFlags: 0
@@ -7063,6 +7066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: 
 --- !u!1 &1597648415
 GameObject:
   m_ObjectHideFlags: 0
@@ -8016,6 +8020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: CombatScene
 --- !u!61 &1781623341
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8355,6 +8360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: CombatScene
 --- !u!61 &1869037901
 BoxCollider2D:
   m_ObjectHideFlags: 0
