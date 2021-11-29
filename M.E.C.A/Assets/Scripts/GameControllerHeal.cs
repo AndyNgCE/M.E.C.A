@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
+public class GameControllerHeal : MonoBehaviour
 {
     // The deck, player's hand, and cards chosen
     public DeckModel player;
@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     public Text heal1;
     public Text heal2;
 
-    // Defeat overlay
+    // DefeatHeal overlay
     public GameObject restartLevel;
     public GameObject quitLevel;
     public GameObject menuFade;
@@ -76,10 +76,8 @@ public class GameController : MonoBehaviour
 
     public GameObject cardBlocker;
 
-    public int enemyCheck;
-
     //Starts Player's turn
-    public void StartTurn()
+    public void StartTurnHeal()
     {
         if(condition == 0)
         {
@@ -96,11 +94,11 @@ public class GameController : MonoBehaviour
         prevNum = 0;
         numCardsPlayed = 0;
 
-        StartCoroutine(StartGame());
+        StartCoroutine(StartGameHeal());
     }
 
     // Function to deal damage to player
-    public void TakeDamage(double damageAmount)
+    public void TakeDamageHeal(double damageAmount)
     {
         currentHealth -= damageAmount;
         healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
@@ -108,7 +106,7 @@ public class GameController : MonoBehaviour
     }
 
     // Function to deal damage to enemy
-    public void DealDamage(double damageAmount)
+    public void DealDamageHeal(double damageAmount)
     {
         Debug.Log("Damage Dealt");
         /*if(enemyCurrentHealth > 130 && enemyCurrentHealth < 180) // if enemy health 130 < x < 180
@@ -120,7 +118,7 @@ public class GameController : MonoBehaviour
     }
 
     // Function to choose card from hand and save value
-    public IEnumerator ChooseCard(int index)
+    public IEnumerator ChooseCardHeal(int index)
     {
         spots.Push(player.Pop(index));  // 0 needs to be the card's index
 
@@ -143,20 +141,20 @@ public class GameController : MonoBehaviour
 
             cardBlocker.SetActive(true);
             
-            StartCoroutine(DamageStep());
+            StartCoroutine(DamageStepHeal());
 
             yield return new WaitForSeconds(0.5f);
 
             /*if(enemyCurrentHealth >= 0)
             {
                 Debug.Log("Enemy Health: " + enemyCurrentHealth);
-                StartCoroutine(EnemyTurn());
+                StartCoroutine(EnemyTurnHeal());
                 yield return new WaitForSeconds(0.5f);
             }*/
         }
     }
 
-    public IEnumerator DamageStep()
+    public IEnumerator DamageStepHeal()
     {
         enemyHealthMark = enemyCurrentHealth;
 
@@ -168,15 +166,15 @@ public class GameController : MonoBehaviour
                 card2 = card2 * 0.8;
                 card3 = card3 * 0.8;
             }
-            DealDamage(card1);
+            DealDamageHeal(card1);
             damage1.text = "-" + (int)card1;
             yield return new WaitForSeconds(0.5f);
             damage1.text = "";
-            DealDamage(card2);
+            DealDamageHeal(card2);
             damage2.text = "-" + (int)card2;
             yield return new WaitForSeconds(0.5f);
             damage2.text = "";
-            DealDamage(card3);
+            DealDamageHeal(card3);
             damage3.text = "-" + (int)card3;
             yield return new WaitForSeconds(0.5f);
             damage3.text = "";
@@ -196,15 +194,15 @@ public class GameController : MonoBehaviour
                 card2 = card2 * 0.8;
                 card3 = card3 * 0.8;
             }
-            DealDamage(card1);
+            DealDamageHeal(card1);
             damage1.text = "-" + (int)card1;
             yield return new WaitForSeconds(0.5f);
             damage1.text = "";
-            DealDamage(card2);
+            DealDamageHeal(card2);
             damage2.text = "-" + (int)card2;
             yield return new WaitForSeconds(0.5f);
             damage2.text = "";
-            DealDamage(card3);
+            DealDamageHeal(card3);
             damage3.text = "-" + (int)card3;
             yield return new WaitForSeconds(0.5f);
             damage3.text = "";
@@ -217,43 +215,43 @@ public class GameController : MonoBehaviour
                 card2 = card2 * 0.8;
                 card3 = card3 * 0.8;
             }
-            DealDamage(card1 * damageMultiplier);
+            DealDamageHeal(card1 * damageMultiplier);
             damage1.text = "-" + (int)(card1 * damageMultiplier);
             yield return new WaitForSeconds(0.5f);
             damage1.text = "";
-            DealDamage(card2 * damageMultiplier);
+            DealDamageHeal(card2 * damageMultiplier);
             damage2.text = "-" + (int)(card2 * damageMultiplier);
             yield return new WaitForSeconds(0.5f);
             damage2.text = "";
-            DealDamage(card3 * damageMultiplier);
+            DealDamageHeal(card3 * damageMultiplier);
             damage3.text = "-" + (int)(card3 * damageMultiplier);
             yield return new WaitForSeconds(0.5f);
             damage3.text = "";
         }
 
-        /*DealDamage(card1);
+        /*DealDamageHeal(card1);
         yield return new WaitForSeconds(0.5f);
-        DealDamage(card2);
+        DealDamageHeal(card2);
         yield return new WaitForSeconds(0.5f);
-        DealDamage(card3);
+        DealDamageHeal(card3);
         yield return new WaitForSeconds(0.5f);*/
 
-        StartCoroutine(EnemyCurrentHealthCheck());
+        StartCoroutine(EnemyCurrentHealthCheckHeal());
     }
 
-    public IEnumerator EnemyCurrentHealthCheck()
+    public IEnumerator EnemyCurrentHealthCheckHeal()
     {
         if(enemyCurrentHealth >= 0)
         {
             Debug.Log("Enemy Health: " + enemyCurrentHealth);
-            StartCoroutine(EnemyTurn());
+            StartCoroutine(EnemyTurnHeal());
             yield return new WaitForSeconds(0.5f);
             heal1.text = "";
         }
     }
 
     // Function for enemy to take turn
-    IEnumerator EnemyTurn(/*int index card 1*/)
+    IEnumerator EnemyTurnHeal(/*int index card 1*/)
     {
         if(condition == 1)
         {
@@ -275,12 +273,7 @@ public class GameController : MonoBehaviour
                 {
                     damageToTake = damageToTake * 1.1;
                 }
-                TakeDamage(damageToTake);
-
-                if(enemyCheck == 2)
-                {
-                    damageToTake -= 5;
-                }
+                TakeDamageHeal(damageToTake);
 
                 damageCumulative = damageCumulative + damageToTake;
 
@@ -315,17 +308,8 @@ public class GameController : MonoBehaviour
 
             heal2.text = "";
 
-            // 5 health damage at end turn
-            if(enemyCheck == 0)
-            {
-                currentHealth -= 10;
-                healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
-                playerDamage1.text = "-10";
-                yield return new WaitForSeconds(1f);
-                playerDamage1.text = "";
-            }
-
-            if(enemyCheck == 1)
+            // regenerates health
+            if(true)
             {
                 enemyCurrentHealth += 10;
                 enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
@@ -334,51 +318,51 @@ public class GameController : MonoBehaviour
                 heal2.text = "";
             }
 
-            StartTurn();
+            StartTurnHeal();
         }
     }
 
     // Function to remove card from hand
-    public void RemoveCard(int index)
+    public void RemoveCardHeal(int index)
     {
         player.Push(spots.Pop(index));
     }
 
-    // Function when victory condition met
-    IEnumerator Victory()
+    // Function when VictoryHeal condition met
+    IEnumerator VictoryHeal()
     {
         if(condition == 1)
         {
             // GlobalControl.Instance.HP = currenthealth;
-            winnerText.text = "VICTORY!!!"; // return to map scene with current progress
+            winnerText.text = "VictoryHeal!!!"; // return to map scene with current progress
             condition = 0;
             yield return new WaitForSeconds(3.5f);
             SceneManager.LoadScene(sceneName: "Travel Scene");
         }
     }
 
-    // Function when defeat condition met
-    IEnumerator Defeat()
+    // Function when DefeatHeal condition met
+    IEnumerator DefeatHeal()
     {
         if(condition == 1)
         {
-            winnerText.text = "DEFEAT!!!"; // return to start of level (probably some sort of menu tbh)
+            winnerText.text = "DefeatHeal!!!"; // return to start of level (probably some sort of menu tbh)
             condition = 0;
             yield return new WaitForSeconds(3.5f);
             restartLevel.SetActive(true);
             quitLevel.SetActive(true);
             menuFade.SetActive(true);
             gameMenu.SetActive(true);
-            //SceneManager.LoadScene(sceneName: "MainMenu");
+            //SceneManager.LoadScene(sceneName: "MainMenuHeal");
         }
     }
 
-    public void MainMenu()
+    public void MainMenuHeal()
     {
-        SceneManager.LoadScene(sceneName: "MainMenu");
+        SceneManager.LoadScene(sceneName: "MainMenuHeal");
     }
 
-    public void RestartLevel()
+    public void RestartLevelHeal()
     {
         SceneManager.LoadScene(sceneName: "Travel Scene");
     }
@@ -386,7 +370,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         fromScene = PlayerPrefs.GetString("p_Scene");
-        StartCoroutine(StartGame());
+        StartCoroutine(StartGameHeal());
         damage1.text = "";
         damage2.text = "";
         damage3.text = "";
@@ -401,12 +385,12 @@ public class GameController : MonoBehaviour
     {
         if(enemyCurrentHealth <= 0)
         {
-            StartCoroutine(Victory());
+            StartCoroutine(VictoryHeal());
         }
 
         if(currentHealth <= 0)
         {
-            StartCoroutine(Defeat());
+            StartCoroutine(DefeatHeal());
         }
 
         if (Input.GetKeyDown("escape"))
@@ -431,7 +415,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    IEnumerator StartGame()
+    IEnumerator StartGameHeal()
     {
         restartLevel.SetActive(false);
         quitLevel.SetActive(false);
