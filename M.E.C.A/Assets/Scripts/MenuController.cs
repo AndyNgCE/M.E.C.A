@@ -77,6 +77,18 @@ public class MenuController : MonoBehaviour
         settings.SetActive(false);
     }
 
+    public void MainMenuTravel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneName: "MainMenu");
+    }
+
+    public void RestartLevelTravel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneName: "Travel Scene");
+    }
+
     void Start()
     {
         /*volumeSlider.SetActive(false);

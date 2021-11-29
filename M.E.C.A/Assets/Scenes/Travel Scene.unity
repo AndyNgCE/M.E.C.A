@@ -715,18 +715,26 @@ PrefabInstance:
     - target: {fileID: 1796989713835398650, guid: 93a648c5d7d68b14fa9175f071dd6fa3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 300797028}
     - target: {fileID: 1796989713835398650, guid: 93a648c5d7d68b14fa9175f071dd6fa3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartLevel
+      value: RestartLevelTravel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796989713835398650, guid: 93a648c5d7d68b14fa9175f071dd6fa3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1796989715064130827, guid: 93a648c5d7d68b14fa9175f071dd6fa3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 300797028}
     - target: {fileID: 1796989715064130827, guid: 93a648c5d7d68b14fa9175f071dd6fa3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenu
+      value: MainMenuTravel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796989715064130827, guid: 93a648c5d7d68b14fa9175f071dd6fa3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2042003571144994838, guid: 93a648c5d7d68b14fa9175f071dd6fa3, type: 3}
       propertyPath: m_Name

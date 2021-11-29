@@ -30,6 +30,7 @@ public class TravelMenu : MonoBehaviour
             menuCheck++;
             if(menuCheck % 2 == 1)
             {
+                Time.timeScale = 0;
                 restartLevel.SetActive(true);
                 quitLevel.SetActive(true);
                 menuFade.SetActive(true);
@@ -38,6 +39,7 @@ public class TravelMenu : MonoBehaviour
             }
             else
             {
+                Time.timeScale = 1;
                 restartLevel.SetActive(false);
                 quitLevel.SetActive(false);
                 menuFade.SetActive(false);
