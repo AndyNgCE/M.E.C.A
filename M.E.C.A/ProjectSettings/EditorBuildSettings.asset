@@ -11,10 +11,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CombatScene.unity
     guid: cef285fcff075ef48a608fc60269dedf
-  - enabled: 1
-    path: Assets/Scenes/QuitButton.unity
-    guid: 92c1e2496110f1a489d2f107dd85339a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 7fbba4cc758a0d14eac422230730bf58
+  - enabled: 1
+    path: Assets/Scenes/CombatSceneBlock.unity
+    guid: 9cf4f49653fa3c647a725855763d8b84
+  - enabled: 1
+    path: Assets/Scenes/CombatSceneHeal.unity
+    guid: c2af4fd0083e8d24aa5f6f76b3e594ef
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 06ab45b2f858f034d9b35847466976ba
+  - enabled: 1
+    path: Assets/Scenes/2 - Travel Scene.unity
+    guid: f8d960ff07d2e34498fa8fe91f79ba61
+  - enabled: 1
+    path: Assets/Scenes/3 - Travel Scene.unity
+    guid: e81e8ee7a7ea0e84a8a7d4e3c12e239a
+  - enabled: 1
+    path: Assets/Scenes/4 - Travel Scene.unity
+    guid: 0ec3ed7494673ab479cb00b1d61de1ea
+  - enabled: 1
+    path: Assets/Scenes/5 - Travel Scene.unity
+    guid: b7219058a7efc2149b7f02be597fdb97
   m_configObjects: {}

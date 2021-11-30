@@ -364,7 +364,13 @@ public class GameControllerHeal : MonoBehaviour
 
     public void RestartLevelHeal()
     {
-        SceneManager.LoadScene(sceneName: "Travel Scene");
+        string stringRestart = PlayerPrefs.GetString("p_Scene");
+        PlayerPrefs.DeleteKey("p_x");
+        PlayerPrefs.DeleteKey("p_y");
+        PlayerPrefs.DeleteKey("HP");
+        PlayerPrefs.DeleteKey("TimetoLoad");
+        PlayerPrefs.DeleteKey("Saved");
+        SceneManager.LoadScene(sceneName: stringRestart);
     }
 
     void Start()
