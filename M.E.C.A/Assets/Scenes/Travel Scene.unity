@@ -6966,10 +6966,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1588710704}
   - component: {fileID: 1588710705}
-<<<<<<< Updated upstream
-=======
-  - component: {fileID: 1588710707}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: floorAlpha (31)
   m_TagString: Untagged
@@ -7043,23 +7039,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< Updated upstream
-=======
---- !u!114 &1588710707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1588710703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destination: 
-  timeRemaining: 10
->>>>>>> Stashed changes
 --- !u!1 &1597648415
 GameObject:
   m_ObjectHideFlags: 0
