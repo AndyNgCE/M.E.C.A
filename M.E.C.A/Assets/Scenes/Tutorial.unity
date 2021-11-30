@@ -1530,7 +1530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 335.1212, y: 62.8352}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &876550806
@@ -3807,11 +3807,11 @@ MonoBehaviour:
   prevNum: 0
   numCardsPlayed: 0
   firstNum: 0
-  maxHealth: 300
-  currentHealth: 300
+  maxHealth: 500
+  currentHealth: 500
   healthBar: {fileID: 1761831878}
-  enemyMaxHealth: 300
-  enemyCurrentHealth: 300
+  enemyMaxHealth: 200
+  enemyCurrentHealth: 200
   enemyHealthBar: {fileID: 1693968253}
   enemyHealthMark: 0
   card1: 0
