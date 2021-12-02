@@ -27,10 +27,14 @@ public class LevelComplete : MonoBehaviour
             Debug.Log("Triggered by Player");
             if(nextLevel != null)
             {
+                PlayerPrefs.DeleteKey("p_x");
+                PlayerPrefs.DeleteKey("p_y");
                 SceneManager.LoadScene(sceneName: nextLevel);
             }
             else
             {
+                PlayerPrefs.DeleteKey("p_x");
+                PlayerPrefs.DeleteKey("p_y");
                 SceneManager.LoadScene(sceneName: "MainMenu");
             }
         }
