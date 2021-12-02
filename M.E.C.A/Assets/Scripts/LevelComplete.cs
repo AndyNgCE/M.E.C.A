@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelComplete : MonoBehaviour
 {
+    [SerializeField]
+    string nextLevel;
     void Start()
     {
         //Set the tag of this GameObject to Player
@@ -16,7 +18,14 @@ public class LevelComplete : MonoBehaviour
         if(col.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Triggered by Player");
-            SceneManager.LoadScene(sceneName: "MainMenu");
+            if(nextLevel != null)
+            {
+                SceneManager.LoadScene(sceneName: nextLevel);
+            }
+            else
+            {
+                SceneManager.LoadScene(sceneName: "MainMenu");
+            }
         }
     }
 }

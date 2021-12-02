@@ -4,10 +4,5 @@ using UnityEngine;
 
 public class Kill : MonoBehaviour
 {
-    public int pacMan = 0;
-
-    void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+    
 }
