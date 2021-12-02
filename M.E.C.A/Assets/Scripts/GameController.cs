@@ -482,7 +482,10 @@ public class GameController : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(sceneName: "Travel Scene");
+        PlayerPrefs.DeleteKey("p_x");
+        PlayerPrefs.DeleteKey("p_y");
+        string walkOfShame = PlayerPrefs.GetString("p_Scene");
+        SceneManager.LoadScene(sceneName: walkOfShame);
     }
 
     void Start()
