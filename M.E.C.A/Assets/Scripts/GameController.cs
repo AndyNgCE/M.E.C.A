@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour
     public Text turnText;
     public Text playerTurnText;
 
+    public Text playerHP;
+    public Text enemyHP;
+
     public Text damage1;
     public Text damage2;
     public Text damage3;
@@ -104,8 +107,9 @@ public class GameController : MonoBehaviour
     // Function to deal damage to player
     public void TakeDamage(double damageAmount)
     {
-        currentHealth -= damageAmount;
+        currentHealth -= (int)damageAmount;
         healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
+        playerHP.text = currentHealth + " / " + maxHealth;
         Debug.Log("Current Health: " + currentHealth);
     }
 
@@ -113,8 +117,9 @@ public class GameController : MonoBehaviour
     public void DealDamage(double damageAmount)
     {
         Debug.Log("Damage Dealt");
-        enemyCurrentHealth -= damageAmount;
+        enemyCurrentHealth -= (int)damageAmount;
         enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
+        enemyHP.text = enemyCurrentHealth + " / " + enemyMaxHealth;
     }
 
     // Function to choose card from hand and save value
@@ -277,7 +282,7 @@ public class GameController : MonoBehaviour
                 damageMultiplier = 1.05;
             }
 
-            DealDamage(card1 * damageMultiplier*8);
+            DealDamage(card1 * damageMultiplier);
             damage1.text = "-" + (int)(card1 * damageMultiplier);
             yield return new WaitForSeconds(0.5f);
             damage1.text = "";
@@ -381,15 +386,15 @@ public class GameController : MonoBehaviour
 
                 if(i == 0)
                 {
-                    playerDamage1.text = "-" + damageToTake;
+                    playerDamage1.text = "-" + (int)damageToTake;
                 }
                 else if(i == 1)
                 {
-                    playerDamage2.text = "-" + damageToTake;
+                    playerDamage2.text = "-" + (int)damageToTake;
                 }
                 else
                 {
-                    playerDamage3.text = "-" + damageToTake;
+                    playerDamage3.text = "-" + (int)damageToTake;
                 }
 
                 yield return new WaitForSeconds(0.5f);
@@ -485,8 +490,9 @@ public class GameController : MonoBehaviour
         fromScene = PlayerPrefs.GetString("p_Scene");
 
         //currentHealth = healthController.currentPlayerHealth;
+        playerHP.text = currentHealth + " / " + maxHealth;
+        enemyHP.text = enemyCurrentHealth + " / " + enemyMaxHealth;
 
-        StartCoroutine(StartGame());
         damage1.text = "";
         damage2.text = "";
         damage3.text = "";
@@ -495,6 +501,7 @@ public class GameController : MonoBehaviour
         playerDamage3.text = "";
         heal1.text = "";
         heal2.text = "";
+        StartCoroutine(StartGame());
     }
 
     void Update() //Check if enemy hp <= 0
