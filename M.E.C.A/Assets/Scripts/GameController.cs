@@ -277,7 +277,7 @@ public class GameController : MonoBehaviour
                 damageMultiplier = 1.05;
             }
 
-            DealDamage(card1 * damageMultiplier);
+            DealDamage(card1 * damageMultiplier*8);
             damage1.text = "-" + (int)(card1 * damageMultiplier);
             yield return new WaitForSeconds(0.5f);
             damage1.text = "";

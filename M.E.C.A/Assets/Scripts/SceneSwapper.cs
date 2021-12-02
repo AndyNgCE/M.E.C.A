@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class SceneSwapper : MonoBehaviour
 {
@@ -7,42 +8,41 @@ public class SceneSwapper : MonoBehaviour
     
     [SerializeField]
     string destination;
-    private int destruction;
 
-    public float timeRemaining = 10;
+
+    public GameObject indicator;
+    private Kill knockOut;
+    private List<int> tagline;
+    
+    [SerializeField]
+    int ID;
     void Start()
     {
         //Set the tag of this GameObject to Enemy for patrollers
         gameObject.tag = "Enemy";
         playerPosData = FindObjectOfType<PositionSaver>();
-        destruction = 1;
+        knockOut = indicator.GetComponent<Kill>();
+        tagline = knockOut.GetList();
     }
 
-    void Update()
+    void CheckUp()
     {
-        if(timeRemaining > 0)
+        if(!tagline.Contains(ID))
         {
-            timeRemaining -= Time.deltaTime;
-        }
-        if(timeRemaining <= 0)
-        {
-            destruction = 0;
+            tagline.Add(ID);
+            Debug.Log("ADD " + ID);
         }
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag.Equals("Player") && destruction == 0)
+        if(col.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Triggered by Player");
             // used to put the player back after victory
             playerPosData.playerPosSave();
+            CheckUp();
             SceneManager.LoadScene(sceneName: destination);
         }
-        if (col.gameObject.tag.Equals("Player") && destruction == 1)
-        {
-         Destroy(gameObject);
-        }
-
     }
 }

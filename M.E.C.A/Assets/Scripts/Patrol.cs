@@ -13,13 +13,13 @@ public class Patrol : MonoBehaviour
     Vector2 posLastFrame;
     Vector2 posThisFrame;
 
-
     void Start()
     {
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, moveSpot.Length);
         flipper = GetComponent<SpriteRenderer>();
     }
+
 
     // Update is called once per frame
     void Update()

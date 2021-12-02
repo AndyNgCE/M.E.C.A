@@ -94,7 +94,7 @@ public class DeckView : MonoBehaviour  //CardStackView
 
         fetchedCards.Add(cardIndex, new CardView(cardCopy));
 
-        Debug.Log("Hand Value = " + deck.HandValue());
+        //Debug.Log("Hand Value = " + deck.HandValue());
         /*int damageToDeal = deck.HandValue();
         counter++;
 
