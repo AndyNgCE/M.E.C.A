@@ -9,8 +9,8 @@ public class SceneSwapper : MonoBehaviour
     [SerializeField]
     string destination;
 
-
-    public GameObject indicator;
+    [SerializeField]
+    GameObject indicator;
     private Kill knockOut;
     private List<int> tagline;
     
@@ -21,6 +21,7 @@ public class SceneSwapper : MonoBehaviour
         //Set the tag of this GameObject to Enemy for patrollers
         gameObject.tag = "Enemy";
         playerPosData = FindObjectOfType<PositionSaver>();
+        indicator = GameObject.Find("Reaper");
         knockOut = indicator.GetComponent<Kill>();
         tagline = knockOut.GetList();
     }

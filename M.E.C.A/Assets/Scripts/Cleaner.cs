@@ -5,15 +5,17 @@ using UnityEngine;
 public class Cleaner : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject soul;
+    [SerializeField]
+    GameObject soul;
     private Kill crosshair;
     private List<int> border;
 
     [SerializeField]
     int ID;
 
-    void Start()
+    void Awake()
     {
+        soul = GameObject.Find("Reaper");
         crosshair = soul.GetComponent<Kill>();
         border = crosshair.GetList();
         CheckUp();
@@ -27,6 +29,7 @@ public class Cleaner : MonoBehaviour
         }
         if (border.Contains(ID))
         {
+            Debug.Log("Cleaned " + ID);
             Destroy(this.gameObject);
         }
     }

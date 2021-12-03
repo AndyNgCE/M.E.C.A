@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Kill : MonoBehaviour
 {
-    public static List<int> grave = new List<int>();
+    public List<int> grave = new List<int>();
     public static Kill removal;
 
     void Awake()

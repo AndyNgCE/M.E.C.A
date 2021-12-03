@@ -11,10 +11,21 @@ public class Quit : MonoBehaviour
     {
        playerPosData = FindObjectOfType<PositionSaver>();
     }*/
+    GameObject group;
+    private Kill revive;
+    private List<int> reload;
 
     public void QuitGame()
     {
         Debug.Log("QUIT");
+        group = GameObject.Find("Reaper");
+        revive = group.GetComponent<Kill>();
+        reload = revive.GetList();
+        foreach (var x in reload)
+        {
+            Debug.Log("In Grave: " + x.ToString());
+        }
+        reload.Clear();
         //Application.Quit();
         //playerPosData.playerPosSave();
         SceneManager.LoadScene(sceneName: "MainMenu");
