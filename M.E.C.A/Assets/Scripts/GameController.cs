@@ -33,6 +33,10 @@ public class GameController : MonoBehaviour
     public Text heal1;
     public Text heal2;
 
+    public Text damageIconNum;
+    public Text healIconNum;
+    public Text blockIconNum;
+
     // Defeat overlay
     public GameObject restartLevel;
     public GameObject quitLevel;
@@ -72,6 +76,7 @@ public class GameController : MonoBehaviour
     public double healCount = 0;
     public double blockCount = 0;
     public double damageCount = 0;
+    public double blockCountText = 0;
 
     public double healMultiplier = 0.5;
     public double blockMultiplier = 0.3;
@@ -207,7 +212,7 @@ public class GameController : MonoBehaviour
             {
                 healMultiplier = 0.1;
             }
-            currentHealth = currentHealth + ((card1 + card2 + card3) * healMultiplier);
+            currentHealth = currentHealth + (int)((card1 + card2 + card3) * healMultiplier);
             Debug.Log("CHECKING OUR HEALTH AFTER HEALING RIGHT HERE: " + currentHealth);
             healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
             heal1.text = "+" + (int)((card1 + card2 + card3) * healMultiplier);
@@ -215,6 +220,7 @@ public class GameController : MonoBehaviour
             if(blockCount != 0)
             {
                 blockCount--;
+                blockCountText--;
             }
 
             if(damageCount != 0)
@@ -298,6 +304,7 @@ public class GameController : MonoBehaviour
             if(blockCount != 0)
             {
                 blockCount--;
+                blockCountText--;
             }
 
             if(healCount != 0)
@@ -305,6 +312,15 @@ public class GameController : MonoBehaviour
                 damageCount--;
             }
         }
+
+        if(card1 == 22 || card1 == 25 || card1 == 28 || card1 == 31)
+        {
+            blockCountText++;
+        }
+
+        damageIconNum.text = "" + damageCount;
+        healIconNum.text = "" + healCount;
+        blockIconNum.text = "" + blockCountText;
 
         /*DealDamage(card1);
         yield return new WaitForSeconds(0.5f);
@@ -339,7 +355,8 @@ public class GameController : MonoBehaviour
             yield return new WaitForSeconds(1f);
             for(int i = 0; i < 3; i++)
             {
-                damageToTake = UnityEngine.Random.Range(25, 45);
+                //damageToTake = UnityEngine.Random.Range(25, 45);
+                damageToTake = 20;
 
                 if(card1 == 22 || card1 == 25 || card1 == 28 || card1 == 31)
                 {
@@ -360,13 +377,13 @@ public class GameController : MonoBehaviour
                         blockMultiplier = 0.1;
                     }
 
-                    damageToTake = damageToTake * blockMultiplier;
+                    damageToTake = (int)(damageToTake * blockMultiplier);
                     if(i == 0)
                     {
                         blockCount++;
                         if(healCount != 0)
                         {
-                            blockCount--;
+                            healCount--;
                         }
 
                         if(damageCount != 0)
@@ -382,7 +399,7 @@ public class GameController : MonoBehaviour
                 }
                 TakeDamage(damageToTake);
 
-                damageCumulative = damageCumulative + damageToTake;
+                damageCumulative = damageCumulative + (int)damageToTake;
 
                 if(i == 0)
                 {
@@ -405,7 +422,7 @@ public class GameController : MonoBehaviour
 
             if(enemyHealthMark <= 130)
             {
-                enemyCurrentHealth = enemyCurrentHealth + (damageCumulative * 0.3);
+                enemyCurrentHealth = enemyCurrentHealth + (int)(damageCumulative * 0.3);
                 heal2.text = "+" + (damageCumulative * 0.3);
                 enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
             }
