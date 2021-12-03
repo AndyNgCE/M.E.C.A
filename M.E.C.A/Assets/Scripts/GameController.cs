@@ -215,6 +215,7 @@ public class GameController : MonoBehaviour
             currentHealth = currentHealth + (int)((card1 + card2 + card3) * healMultiplier);
             Debug.Log("CHECKING OUR HEALTH AFTER HEALING RIGHT HERE: " + currentHealth);
             healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
+            playerHP.text = currentHealth + " / " + maxHealth;
             heal1.text = "+" + (int)((card1 + card2 + card3) * healMultiplier);
             healCount++;
             if(blockCount != 0)
@@ -390,6 +391,9 @@ public class GameController : MonoBehaviour
                         {
                             damageCount--;
                         }
+                        damageIconNum.text = "" + damageCount;
+                        healIconNum.text = "" + healCount;
+                        blockIconNum.text = "" + blockCountText;
                     }
                 }
 
@@ -425,6 +429,7 @@ public class GameController : MonoBehaviour
                 enemyCurrentHealth = enemyCurrentHealth + (int)(damageCumulative * 0.3);
                 heal2.text = "+" + (damageCumulative * 0.3);
                 enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
+                enemyHP.text = enemyCurrentHealth + " / " + enemyMaxHealth;
             }
 
             damageCumulative = 0;
@@ -437,6 +442,7 @@ public class GameController : MonoBehaviour
             {
                 currentHealth -= 10;
                 healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
+                playerHP.text = currentHealth + " / " + maxHealth;
                 playerDamage1.text = "-10";
                 yield return new WaitForSeconds(1f);
                 playerDamage1.text = "";
@@ -446,6 +452,7 @@ public class GameController : MonoBehaviour
             {
                 enemyCurrentHealth += 10;
                 enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
+                enemyHP.text = enemyCurrentHealth + " / " + enemyMaxHealth;
                 heal2.text = "+10";
                 yield return new WaitForSeconds(1f);
                 heal2.text = "";
