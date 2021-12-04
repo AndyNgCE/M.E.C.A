@@ -6,7 +6,18 @@ public class Count : MonoBehaviour
 {
     [SerializeField]
    public int collected = 0;
+    public static Count removal;
+    void Awake()
+    {
+        if (removal != null && removal != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
 
+        removal = this;
+        DontDestroyOnLoad(this);
+    }
     void Start()
     {
         collected = PlayerPrefs.GetInt("lamp");

@@ -485,7 +485,7 @@ public class GameController : MonoBehaviour
             winnerText.text = "VICTORY!!!"; // return to map scene with current progress
             condition = 0;
             yield return new WaitForSeconds(3.5f);
-            SceneManager.LoadScene(sceneName: "p_Scene");
+            SceneManager.LoadScene(sceneName: PlayerPrefs.GetString("p_Scene"));
         }
     }
 

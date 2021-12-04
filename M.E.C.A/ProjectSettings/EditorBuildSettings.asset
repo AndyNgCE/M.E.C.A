@@ -29,12 +29,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2 - Travel Scene.unity
     guid: f8d960ff07d2e34498fa8fe91f79ba61
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/(Old)3 - Travel Scene.unity
     guid: e81e8ee7a7ea0e84a8a7d4e3c12e239a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/(Old)4 - Travel Scene.unity
     guid: 0ec3ed7494673ab479cb00b1d61de1ea
+  - enabled: 1
+    path: Assets/Scenes/3 - Travel Scene.unity
+    guid: 2a329e41d2f38b74a8d2dbb90d15c5e9
+  - enabled: 1
+    path: Assets/Scenes/4 - Travel Scene.unity
+    guid: 3bc7fcff46427eb4fbeeadeb9c5fbe80
   - enabled: 1
     path: Assets/Scenes/5 - Travel Scene.unity
     guid: b7219058a7efc2149b7f02be597fdb97
