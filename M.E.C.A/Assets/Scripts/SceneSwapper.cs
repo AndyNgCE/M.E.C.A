@@ -9,7 +9,7 @@ public class SceneSwapper : MonoBehaviour
     [SerializeField]
     string destination;
 
-    [SerializeField]
+   // [SerializeField]
     GameObject indicator;
     private Kill knockOut;
     private List<int> tagline;

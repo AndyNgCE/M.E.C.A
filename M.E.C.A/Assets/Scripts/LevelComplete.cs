@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelComplete : MonoBehaviour
 {
+    Count total;
     public GameObject group;
     private Kill revive;
     private List<int> reload;
@@ -18,6 +19,7 @@ public class LevelComplete : MonoBehaviour
         reload = revive.GetList();
         gameObject.tag = "Finish";
         reload.Clear();
+        total = FindObjectOfType<Count>();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -29,6 +31,7 @@ public class LevelComplete : MonoBehaviour
             {
                 PlayerPrefs.DeleteKey("p_x");
                 PlayerPrefs.DeleteKey("p_y");
+                total.CollectSave();
                 SceneManager.LoadScene(sceneName: nextLevel);
             }
             else

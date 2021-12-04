@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Quit : MonoBehaviour
 {
+    Count total;
     /*PositionSaver playerPosData;
 
     void Start()
@@ -21,10 +22,6 @@ public class Quit : MonoBehaviour
         group = GameObject.Find("Reaper");
         revive = group.GetComponent<Kill>();
         reload = revive.GetList();
-        foreach (var x in reload)
-        {
-            Debug.Log("In Grave: " + x.ToString());
-        }
         reload.Clear();
         //Application.Quit();
         //playerPosData.playerPosSave();
@@ -34,6 +31,10 @@ public class Quit : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene(sceneName: "CombatScene");
+        group = GameObject.Find("Reaper");
+        revive = group.GetComponent<Kill>();
+        reload = revive.GetList();
+        reload.Clear();
+        SceneManager.LoadScene(sceneName: "p_scene");
     }
 }

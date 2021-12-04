@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cleaner : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
+   // [SerializeField]
     GameObject soul;
     private Kill crosshair;
     private List<int> border;

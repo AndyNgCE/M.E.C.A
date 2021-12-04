@@ -34,6 +34,7 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.DeleteKey("TimetoLoad");
         PlayerPrefs.DeleteKey("Saved");
         PlayerPrefs.DeleteKey("p_scene");
+        PlayerPrefs.SetInt("lamp", 0);
         Debug.Log("PLAY");
         SceneManager.LoadScene(sceneName: "Travel Scene");
     }
