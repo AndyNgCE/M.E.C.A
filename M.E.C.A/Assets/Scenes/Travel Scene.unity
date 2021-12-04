@@ -1448,7 +1448,6 @@ GameObject:
   - component: {fileID: 300797027}
   - component: {fileID: 300797028}
   - component: {fileID: 300797026}
-  - component: {fileID: 300797029}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1509,19 +1508,6 @@ MonoBehaviour:
   settings: {fileID: 381143145}
   soundBar: {fileID: 381143147}
   musicBar: {fileID: 381143146}
---- !u!114 &300797029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300797025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb2e5230ceeae98429806c8b0154fe98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collected: 0
 --- !u!1 &311881034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2307,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4971485686779967642, guid: 1e34e9d5e8ac3ef43847422d04ba6c90, type: 3}
   m_PrefabInstance: {fileID: 4971485686357588636}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &456983047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456983046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2e5230ceeae98429806c8b0154fe98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collected: 0
 --- !u!1 &469187960
 GameObject:
   m_ObjectHideFlags: 0

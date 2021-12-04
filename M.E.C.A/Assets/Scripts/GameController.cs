@@ -359,7 +359,7 @@ public class GameController : MonoBehaviour
             for(int i = 0; i < 3; i++)
             {
                 //damageToTake = UnityEngine.Random.Range(25, 45);
-                damageToTake = 20;
+                damageToTake = 60;
                 /*if(1)
                 10-20
                 if(2)
@@ -516,6 +516,9 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1;
         PlayerPrefs.DeleteKey("p_x");
         PlayerPrefs.DeleteKey("p_y");
+        PlayerPrefs.DeleteKey("TimetoLoad");
+        PlayerPrefs.DeleteKey("Saved");
+        total.collected = PlayerPrefs.GetInt("lamp");
         string walkOfShame = PlayerPrefs.GetString("p_Scene");
         SceneManager.LoadScene(sceneName: walkOfShame);
     }
