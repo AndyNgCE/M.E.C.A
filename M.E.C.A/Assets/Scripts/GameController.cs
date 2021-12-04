@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     public DeckModel spots;
     //public DeckModel deckModel;
 
+    Count total;
+
     //public HealthController healthController;
     
     // UI text
@@ -198,19 +200,19 @@ public class GameController : MonoBehaviour
             Debug.Log("HEAL!!!!!!!!");
             if(healCount == 1)
             {
-                healMultiplier = 0.4;
+                healMultiplier = (0.4 + (total.Inventory() * 0.05));
             }
             else if(healCount == 2)
             {
-                healMultiplier = 0.3;
+                healMultiplier = (0.3 + (total.Inventory() * 0.05));
             }
             else if(healCount == 3)
             {
-                healMultiplier = 0.2;
+                healMultiplier = (0.2 + (total.Inventory() * 0.05));
             }
             else if(healCount >= 4)
             {
-                healMultiplier = 0.1;
+                healMultiplier = (0.1 + (total.Inventory() * 0.05));
             }
             currentHealth = currentHealth + (int)((card1 + card2 + card3) * healMultiplier);
             Debug.Log("CHECKING OUR HEALTH AFTER HEALING RIGHT HERE: " + currentHealth);
@@ -274,19 +276,19 @@ public class GameController : MonoBehaviour
 
             if(damageCount == 1)
             {
-                damageMultiplier = 1.2;
+                damageMultiplier = (1.2 + (total.Inventory() * 0.1));
             }
             else if(damageCount == 2)
             {
-                damageMultiplier = 1.15;
+                damageMultiplier = (1.15 + (total.Inventory() * 0.1));
             }
             else if(damageCount == 3)
             {
-                damageMultiplier = 1.1;
+                damageMultiplier = (1.1 + (total.Inventory() * 0.1));
             }
             else if(damageCount >= 4)
             {
-                damageMultiplier = 1.05;
+                damageMultiplier = (1.05 + (total.Inventory() * 0.1));
             }
 
             DealDamage(card1 * damageMultiplier);
@@ -358,24 +360,30 @@ public class GameController : MonoBehaviour
             {
                 //damageToTake = UnityEngine.Random.Range(25, 45);
                 damageToTake = 20;
+                /*if(1)
+                10-20
+                if(2)
+                12-22
+                if(3)
+                14-24*/
 
                 if(card1 == 22 || card1 == 25 || card1 == 28 || card1 == 31)
                 {
                     if(blockCount == 1)
                     {
-                        blockMultiplier = 0.25;
+                        blockMultiplier = (0.25 + (total.Inventory() * 0.025));
                     }
                     else if(blockCount == 2)
                     {
-                        blockMultiplier = 0.2;
+                        blockMultiplier = (0.2 + (total.Inventory() * 0.025));
                     }
                     else if(blockCount == 3)
                     {
-                        blockMultiplier = 0.15;
+                        blockMultiplier = (0.15 + (total.Inventory() * 0.025));
                     }
                     else if(blockCount >= 4)
                     {
-                        blockMultiplier = 0.1;
+                        blockMultiplier = (0.1 + (total.Inventory() * 0.025));
                     }
 
                     damageToTake = (int)(damageToTake * blockMultiplier);
@@ -520,6 +528,10 @@ public class GameController : MonoBehaviour
         playerHP.text = currentHealth + " / " + maxHealth;
         enemyHP.text = enemyCurrentHealth + " / " + enemyMaxHealth;
 
+        healMultiplier = (0.5 + (total.Inventory() * 0.05));
+        blockMultiplier = (0.3 + (total.Inventory() * 0.025));
+        damageMultiplier = (1.25 + (total.Inventory() * 0.1));
+
         damage1.text = "";
         damage2.text = "";
         damage3.text = "";
@@ -585,5 +597,10 @@ public class GameController : MonoBehaviour
             player.Push(dealer.Pop(0));
             yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    void Awake()
+    {
+        total = FindObjectOfType<Count>();
     }
 }
