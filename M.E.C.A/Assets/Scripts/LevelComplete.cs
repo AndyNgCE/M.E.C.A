@@ -31,6 +31,8 @@ public class LevelComplete : MonoBehaviour
             {
                 PlayerPrefs.DeleteKey("p_x");
                 PlayerPrefs.DeleteKey("p_y");
+                PlayerPrefs.DeleteKey("TimetoLoad");
+                PlayerPrefs.DeleteKey("Saved");
                 total.CollectSave();
                 SceneManager.LoadScene(sceneName: nextLevel);
             }
