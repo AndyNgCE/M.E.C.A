@@ -519,6 +519,7 @@ public class GameController : MonoBehaviour
         PlayerPrefs.DeleteKey("TimetoLoad");
         PlayerPrefs.DeleteKey("Saved");
         total.collected = PlayerPrefs.GetInt("lamp");
+        // Here: var Hp = 300; 
         string walkOfShame = PlayerPrefs.GetString("p_Scene");
         SceneManager.LoadScene(sceneName: walkOfShame);
     }
