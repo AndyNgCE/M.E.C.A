@@ -12590,7 +12590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: CombatScene
+  destination: CombatSceneBlock
   ID: 0
 --- !u!61 &590809538
 BoxCollider2D:
@@ -22697,7 +22697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: CombatScene
+  destination: CombatSceneHeal
   ID: 0
 --- !u!61 &1109490185
 BoxCollider2D:
@@ -42259,7 +42259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: CombatScene
+  destination: CombatSceneBlock
   ID: 0
 --- !u!61 &1953828026
 BoxCollider2D:
@@ -44968,7 +44968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: CombatScene
+  destination: CombatSceneHeal
   ID: 0
 --- !u!61 &2088420268
 BoxCollider2D:
