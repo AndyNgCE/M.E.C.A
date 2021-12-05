@@ -16,6 +16,7 @@ public class SceneSwapper : MonoBehaviour
     
     [SerializeField]
     int ID;
+    SpriteRenderer sprite;
     void Start()
     {
         //Set the tag of this GameObject to Enemy for patrollers
@@ -24,6 +25,13 @@ public class SceneSwapper : MonoBehaviour
         indicator = GameObject.Find("Reaper");
         knockOut = indicator.GetComponent<Kill>();
         tagline = knockOut.GetList();
+        sprite = GetComponent<SpriteRenderer>();
+        if(destination == "CombatScene")
+            sprite.color = new Color(255, 0, 0, 1);
+        if(destination == "CombatSceneHeal")
+            sprite.color = new Color(0, 255, 0, 1);
+        if (destination == "CombatSceneBlock")
+            sprite.color = new Color(0, 0, 255, 1);
     }
 
     void CheckUp()

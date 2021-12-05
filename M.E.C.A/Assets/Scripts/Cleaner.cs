@@ -13,6 +13,8 @@ public class Cleaner : MonoBehaviour
     [SerializeField]
     int ID;
 
+    
+
     void Awake()
     {
         soul = GameObject.Find("Reaper");
