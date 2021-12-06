@@ -8,7 +8,7 @@ public class GlobalControl : MonoBehaviour
 
     // Base health of player starts at 300. This valuse should change between battles
     [SerializeField]
-    public int HP = 300;
+    public int HP;
     public static GlobalControl removal;
     void Awake()
     {

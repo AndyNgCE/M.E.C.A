@@ -28,7 +28,7 @@ public class MenuController : MonoBehaviour
         // clears saved data for new games
         PlayerPrefs.DeleteKey("p_x");
         PlayerPrefs.DeleteKey("p_y");
-        PlayerPrefs.DeleteKey("HP");
+        PlayerPrefs.SetInt("health", 300);
         PlayerPrefs.DeleteKey("TimetoLoad");
         PlayerPrefs.DeleteKey("Saved");
         PlayerPrefs.DeleteKey("p_scene");
@@ -43,7 +43,6 @@ public class MenuController : MonoBehaviour
         // Removes last battle position for true restart of level
         PlayerPrefs.DeleteKey("p_x");
         PlayerPrefs.DeleteKey("p_y");
-        PlayerPrefs.DeleteKey("HP");
         PlayerPrefs.DeleteKey("TimetoLoad");
         PlayerPrefs.DeleteKey("Saved");
         // Pull last known level played
