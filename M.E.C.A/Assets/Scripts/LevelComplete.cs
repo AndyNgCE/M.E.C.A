@@ -9,6 +9,9 @@ public class LevelComplete : MonoBehaviour
     public GameObject group;
     private Kill revive;
     private List<int> reload;
+    public GameObject[] clear;
+
+    PlayerMovement MC;
 
     [SerializeField]
     string nextLevel;
@@ -26,6 +29,7 @@ public class LevelComplete : MonoBehaviour
     {
         if(col.gameObject.tag.Equals("Player"))
         {
+            MC = FindObjectOfType<PlayerMovement>();
             Debug.Log("Triggered by Player");
             if(nextLevel != null)
             {
@@ -34,10 +38,28 @@ public class LevelComplete : MonoBehaviour
                 PlayerPrefs.DeleteKey("TimetoLoad");
                 PlayerPrefs.DeleteKey("Saved");
                 total.CollectSave();
+                if(clear == null)
+                {
+                    clear = GameObject.FindGameObjectsWithTag("mark");
+                }
+                foreach (GameObject clear in clear)
+                {
+                    MC.flares--;
+                    Destroy(clear);
+                }
                 SceneManager.LoadScene(sceneName: nextLevel);
             }
             else
             {
+                if (clear == null)
+                {
+                    clear = GameObject.FindGameObjectsWithTag("mark");
+                }
+                foreach (GameObject clear in clear)
+                {
+                    MC.flares--;
+                    Destroy(clear);
+                }
                 PlayerPrefs.DeleteKey("p_x");
                 PlayerPrefs.DeleteKey("p_y");
                 SceneManager.LoadScene(sceneName: "MainMenu");

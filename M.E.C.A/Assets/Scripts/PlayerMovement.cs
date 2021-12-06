@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public int flares = 0;
+    public GameObject myPrefab;
     public float moveSpeed = 5f;
 
     public Rigidbody2D rb;
 
     private SpriteRenderer flipper;
+    private GameObject playerObj = null;
 
     PositionSaver playerPosData;
     private void Awake()
@@ -31,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody2D>();
         flipper = GetComponent<SpriteRenderer>();
+        if (playerObj == null)
+            playerObj = GameObject.Find("Player");
+        if (playerObj == null)
+            playerObj = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -44,6 +51,12 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             flipper.flipX = true;
+        }
+        if (Input.GetKeyDown("e"))
+        {
+           GameObject marker = Instantiate(myPrefab) as GameObject;
+            marker.transform.position = playerObj.transform.position;
+           flares++;
         }
     }
 
