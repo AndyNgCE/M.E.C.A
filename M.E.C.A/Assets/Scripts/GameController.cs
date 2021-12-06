@@ -581,6 +581,30 @@ public class GameController : MonoBehaviour
                 settingsButton.SetActive(false);
             }
         }
+
+        if(currentHealth < 0)
+        {
+            currentHealth = 0;
+            playerHP.text = currentHealth + " / " + maxHealth;
+        }
+
+        if(enemyCurrentHealth < 0)
+        {
+            enemyCurrentHealth = 0;
+            enemyHP.text = enemyCurrentHealth + " / " + enemyMaxHealth;
+        }
+
+        if(currentHealth > 300)
+        {
+            currentHealth = 300;
+            playerHP.text = currentHealth + " / " + maxHealth;
+        }
+
+        if(enemyCurrentHealth > 300)
+        {
+            enemyCurrentHealth = 300;
+            enemyHP.text = enemyCurrentHealth + " / " + enemyMaxHealth;
+        }
     }
 
     IEnumerator StartGame()

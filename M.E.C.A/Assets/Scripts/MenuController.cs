@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject volumeSlider;
-    public GameObject musicSlider;
     public GameObject settingsFade;
     public GameObject settingsText;
     public GameObject rectangle;
