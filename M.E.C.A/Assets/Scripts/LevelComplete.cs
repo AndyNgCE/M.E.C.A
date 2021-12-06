@@ -10,7 +10,7 @@ public class LevelComplete : MonoBehaviour
     private Kill revive;
     private List<int> reload;
     public GameObject[] clear;
-
+    public GameObject[] locks;
     PlayerMovement MC;
 
     [SerializeField]
@@ -38,7 +38,15 @@ public class LevelComplete : MonoBehaviour
                 PlayerPrefs.DeleteKey("TimetoLoad");
                 PlayerPrefs.DeleteKey("Saved");
                 total.CollectSave();
-                if(clear == null)
+                if(locks == null)
+                {
+                    locks = GameObject.FindGameObjectsWithTag("lock");
+                }
+                foreach (GameObject locks in locks)
+                {
+                    Destroy(locks);
+                }
+                if (clear == null)
                 {
                     clear = GameObject.FindGameObjectsWithTag("mark");
                 }
@@ -59,6 +67,14 @@ public class LevelComplete : MonoBehaviour
                 {
                     MC.flares--;
                     Destroy(clear);
+                }
+                if (locks == null)
+                {
+                    locks = GameObject.FindGameObjectsWithTag("lock");
+                }
+                foreach (GameObject locks in locks)
+                {
+                    Destroy(locks);
                 }
                 PlayerPrefs.DeleteKey("p_x");
                 PlayerPrefs.DeleteKey("p_y");
