@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelComplete : MonoBehaviour
 {
     Count total;
+    GlobalControl gControl;
     public GameObject group;
     private Kill revive;
     private List<int> reload;
@@ -23,6 +24,7 @@ public class LevelComplete : MonoBehaviour
         gameObject.tag = "Finish";
         reload.Clear();
         total = FindObjectOfType<Count>();
+        gControl = FindObjectOfType<GlobalControl>();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -38,6 +40,7 @@ public class LevelComplete : MonoBehaviour
                 PlayerPrefs.DeleteKey("TimetoLoad");
                 PlayerPrefs.DeleteKey("Saved");
                 total.CollectSave();
+                gControl.HP = 300;
                 if(locks == null)
                 {
                     locks = GameObject.FindGameObjectsWithTag("lock");

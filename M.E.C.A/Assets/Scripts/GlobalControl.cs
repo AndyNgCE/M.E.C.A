@@ -35,9 +35,9 @@ public class GlobalControl : MonoBehaviour
         }
     }
 
-    public void HealthSave()
+    public void HealthSave(int healthAmount)
     {
-        PlayerPrefs.SetInt("health", HP);
+        PlayerPrefs.SetInt("health", healthAmount);
     }
 
     public int Memory()

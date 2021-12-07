@@ -473,6 +473,7 @@ GameObject:
   - component: {fileID: 15406360}
   - component: {fileID: 15406359}
   - component: {fileID: 15406358}
+  - component: {fileID: 15406364}
   m_Layer: 0
   m_Name: EnemyLR (3)
   m_TagString: Untagged
@@ -493,7 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: CombatScene
-  ID: 0
+  ID: 4
 --- !u!61 &15406359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -622,6 +623,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &15406364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15406357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 4
 --- !u!1 &16355723
 GameObject:
   m_ObjectHideFlags: 0
@@ -4560,6 +4574,7 @@ GameObject:
   - component: {fileID: 175705802}
   - component: {fileID: 175705801}
   - component: {fileID: 175705800}
+  - component: {fileID: 175705806}
   m_Layer: 0
   m_Name: EnemyUD (6)
   m_TagString: Enemy
@@ -4580,7 +4595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: CombatScene
-  ID: 0
+  ID: 9
 --- !u!61 &175705801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4709,6 +4724,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &175705806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175705799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 9
 --- !u!1 &176368726
 GameObject:
   m_ObjectHideFlags: 0
@@ -11858,6 +11886,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4971485686357588636}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &456983047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456983046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26327b59ff25ab9408ce75f513dd10e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
 --- !u!1 &459648045
 GameObject:
   m_ObjectHideFlags: 0
@@ -14947,6 +14988,7 @@ GameObject:
   - component: {fileID: 590809539}
   - component: {fileID: 590809538}
   - component: {fileID: 590809537}
+  - component: {fileID: 590809543}
   m_Layer: 0
   m_Name: EnemyUD (5)
   m_TagString: Enemy
@@ -14967,7 +15009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: CombatSceneBlock
-  ID: 0
+  ID: 7
 --- !u!61 &590809538
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15096,6 +15138,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &590809543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590809536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 7
 --- !u!1 &592376176
 GameObject:
   m_ObjectHideFlags: 0
@@ -15361,6 +15416,7 @@ GameObject:
   - component: {fileID: 601979381}
   - component: {fileID: 601979380}
   - component: {fileID: 601979379}
+  - component: {fileID: 601979385}
   m_Layer: 0
   m_Name: EnemyLR (6)
   m_TagString: Untagged
@@ -15381,7 +15437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: CombatScene
-  ID: 0
+  ID: 8
 --- !u!61 &601979380
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15510,6 +15566,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &601979385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601979378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 8
 --- !u!1001 &602497604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16311,7 +16380,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &643009834
 GameObject:
@@ -16578,6 +16647,7 @@ GameObject:
   - component: {fileID: 655791528}
   - component: {fileID: 655791527}
   - component: {fileID: 655791526}
+  - component: {fileID: 655791532}
   m_Layer: 0
   m_Name: EnemyLR (5)
   m_TagString: Untagged
@@ -16598,7 +16668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: CombatScene
-  ID: 0
+  ID: 6
 --- !u!61 &655791527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16727,6 +16797,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &655791532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655791525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 6
 --- !u!1 &659767776
 GameObject:
   m_ObjectHideFlags: 0
@@ -27570,6 +27653,7 @@ GameObject:
   - component: {fileID: 1109490186}
   - component: {fileID: 1109490185}
   - component: {fileID: 1109490184}
+  - component: {fileID: 1109490190}
   m_Layer: 0
   m_Name: EnemyLR (4)
   m_TagString: Untagged
@@ -27590,7 +27674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: CombatSceneHeal
-  ID: 0
+  ID: 5
 --- !u!61 &1109490185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27719,6 +27803,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1109490190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109490183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 5
 --- !u!1001 &1110642360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33271,6 +33368,7 @@ GameObject:
   - component: {fileID: 1247473802}
   - component: {fileID: 1247473801}
   - component: {fileID: 1247473800}
+  - component: {fileID: 1247473806}
   m_Layer: 0
   m_Name: EnemyUD (3)
   m_TagString: Enemy
@@ -33291,7 +33389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: CombatScene
-  ID: 0
+  ID: 2
 --- !u!61 &1247473801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33420,6 +33518,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1247473806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247473799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 2
 --- !u!1 &1248866516
 GameObject:
   m_ObjectHideFlags: 0
@@ -45427,6 +45538,7 @@ GameObject:
   - component: {fileID: 1792079996}
   - component: {fileID: 1792079995}
   - component: {fileID: 1792079994}
+  - component: {fileID: 1792080000}
   m_Layer: 0
   m_Name: EnemyUD (4)
   m_TagString: Enemy
@@ -45447,7 +45559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: CombatScene
-  ID: 0
+  ID: 3
 --- !u!61 &1792079995
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45576,6 +45688,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1792080000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792079993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 3
 --- !u!1 &1792403989
 GameObject:
   m_ObjectHideFlags: 0
@@ -48503,7 +48628,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1917523327
 PrefabInstance:
@@ -49174,6 +49299,7 @@ GameObject:
   - component: {fileID: 1953828027}
   - component: {fileID: 1953828026}
   - component: {fileID: 1953828025}
+  - component: {fileID: 1953828031}
   m_Layer: 0
   m_Name: EnemyUD (2)
   m_TagString: Enemy
@@ -49194,7 +49320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: CombatSceneBlock
-  ID: 0
+  ID: 1
 --- !u!61 &1953828026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49323,6 +49449,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1953828031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953828024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 1
 --- !u!1001 &1955046964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52393,6 +52532,7 @@ GameObject:
   - component: {fileID: 2088420269}
   - component: {fileID: 2088420268}
   - component: {fileID: 2088420267}
+  - component: {fileID: 2088420273}
   m_Layer: 0
   m_Name: EnemyUD (1)
   m_TagString: Enemy
@@ -52542,6 +52682,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2088420273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088420266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
 --- !u!1 &2089285718
 GameObject:
   m_ObjectHideFlags: 0
@@ -53995,7 +54148,7 @@ PrefabInstance:
     - target: {fileID: 2144553940959166388, guid: 3bae6d50389b898479a640e765623b0c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2144553940959166388, guid: 3bae6d50389b898479a640e765623b0c,
         type: 3}

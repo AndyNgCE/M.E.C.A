@@ -4672,6 +4672,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4971485686357588636}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &456983047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456983046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26327b59ff25ab9408ce75f513dd10e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
 --- !u!1 &460399830
 GameObject:
   m_ObjectHideFlags: 0
@@ -7444,6 +7457,7 @@ GameObject:
   - component: {fileID: 805473787}
   - component: {fileID: 805473786}
   - component: {fileID: 805473785}
+  - component: {fileID: 805473791}
   m_Layer: 0
   m_Name: EnemyUD (1)
   m_TagString: Enemy
@@ -7593,6 +7607,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &805473791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805473784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
 --- !u!1 &808120160
 GameObject:
   m_ObjectHideFlags: 0
@@ -16337,6 +16364,7 @@ GameObject:
   - component: {fileID: 1650281074}
   - component: {fileID: 1650281073}
   - component: {fileID: 1650281072}
+  - component: {fileID: 1650281078}
   m_Layer: 0
   m_Name: EnemyUD (2)
   m_TagString: Enemy
@@ -16357,7 +16385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: CombatScene
-  ID: 0
+  ID: 2
 --- !u!61 &1650281073
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16486,6 +16514,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1650281078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650281071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 2
 --- !u!1 &1665450273
 GameObject:
   m_ObjectHideFlags: 0
@@ -17160,6 +17201,7 @@ GameObject:
   - component: {fileID: 1719257965}
   - component: {fileID: 1719257964}
   - component: {fileID: 1719257963}
+  - component: {fileID: 1719257969}
   m_Layer: 0
   m_Name: EnemyLR (3)
   m_TagString: Untagged
@@ -17180,7 +17222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: CombatSceneBlock
-  ID: 0
+  ID: 1
 --- !u!61 &1719257964
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17309,6 +17351,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1719257969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719257962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 1
 --- !u!1 &1753438158
 GameObject:
   m_ObjectHideFlags: 0

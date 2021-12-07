@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     //public DeckModel deckModel;
 
     Count total;
+    GlobalControl gControl;
 
     //public HealthController healthController;
     
@@ -198,7 +199,12 @@ public class GameController : MonoBehaviour
             damage3.text = "";
 
             Debug.Log("HEAL!!!!!!!!");
-            if(healCount == 1)
+
+            if(healCount == 0)
+            {
+                healMultiplier = (0.5 + (total.Inventory() * 0.05));
+            }
+            else if(healCount == 1)
             {
                 healMultiplier = (0.4 + (total.Inventory() * 0.05));
             }
@@ -274,7 +280,11 @@ public class GameController : MonoBehaviour
                 card3 -= 5;
             }
 
-            if(damageCount == 1)
+            if(damageCount == 0)
+            {
+                damageMultiplier = (1.25 + (total.Inventory() * 0.1));
+            }
+            else if(damageCount == 1)
             {
                 damageMultiplier = (1.2 + (total.Inventory() * 0.1));
             }
@@ -359,7 +369,7 @@ public class GameController : MonoBehaviour
             for(int i = 0; i < 3; i++)
             {
                 //damageToTake = UnityEngine.Random.Range(25, 45);
-                damageToTake = 60;
+                damageToTake = 30;
                 /*if(1)
                 10-20
                 if(2)
@@ -367,27 +377,36 @@ public class GameController : MonoBehaviour
                 if(3)
                 14-24*/
 
+                if(PlayerPrefs.GetString("p_Scene") == "Tutorial - Travel Scene")
+                {
+                    damageToTake = UnityEngine.Random.Range(10, 25);
+                }
+
                 if(card1 == 22 || card1 == 25 || card1 == 28 || card1 == 31)
                 {
-                    if(blockCount == 1)
+                    if(blockCount == 0)
                     {
-                        blockMultiplier = (0.25 + (total.Inventory() * 0.025));
+                        blockMultiplier = (0.3 + (total.Inventory() * 0.025));
+                    }
+                    else if(blockCount == 1)
+                    {
+                        blockMultiplier = (0.15 + (total.Inventory() * 0.025));
                     }
                     else if(blockCount == 2)
                     {
-                        blockMultiplier = (0.2 + (total.Inventory() * 0.025));
+                        blockMultiplier = 0;
                     }
-                    else if(blockCount == 3)
+                    /*else if(blockCount == 3)
                     {
                         blockMultiplier = (0.15 + (total.Inventory() * 0.025));
                     }
                     else if(blockCount >= 4)
                     {
                         blockMultiplier = (0.1 + (total.Inventory() * 0.025));
-                    }
+                    }*/
 
-                    damageToTake = (int)(damageToTake * blockMultiplier);
-                    if(i == 0)
+                    damageToTake = (int)(damageToTake * (1 - blockMultiplier));
+                    if(i == 2)
                     {
                         blockCount++;
                         if(healCount != 0)
@@ -484,6 +503,8 @@ public class GameController : MonoBehaviour
             // GlobalControl.Instance.HP = currenthealth;
             winnerText.text = "VICTORY!!!"; // return to map scene with current progress
             condition = 0;
+            //gControl.HealthSave((int)currentHealth);
+            gControl.HP = (int)currentHealth;
             yield return new WaitForSeconds(3.5f);
             SceneManager.LoadScene(sceneName: PlayerPrefs.GetString("p_Scene"));
         }
@@ -527,6 +548,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         fromScene = PlayerPrefs.GetString("p_Scene");
+
+        currentHealth = gControl.Memory();
 
         //currentHealth = healthController.currentPlayerHealth;
         playerHP.text = currentHealth + " / " + maxHealth;
@@ -630,5 +653,6 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         total = FindObjectOfType<Count>();
+        gControl = FindObjectOfType<GlobalControl>();
     }
 }

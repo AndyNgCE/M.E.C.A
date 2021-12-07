@@ -24,18 +24,18 @@ EditorBuildSettings:
     path: Assets/Scenes/CombatScene.unity
     guid: cef285fcff075ef48a608fc60269dedf
   - enabled: 1
-    path: Assets/Scenes/5- Travel Scene.unity
-    guid: 010988ce0bee08f4d9d79b8bb66767bd
+    path: Assets/Scenes/Tutorial - Travel Scene.unity
+    guid: 1af21e44c452f154e9617a48280fa8e5
   - enabled: 1
-    path: Assets/Scenes/4 - Travel Scene.unity
-    guid: 3bc7fcff46427eb4fbeeadeb9c5fbe80
+    path: Assets/Scenes/2 - Travel Scene.unity
+    guid: 34bb8693a5ed772408ca70463e368545
   - enabled: 1
     path: Assets/Scenes/3 - Travel Scene.unity
     guid: 2a329e41d2f38b74a8d2dbb90d15c5e9
   - enabled: 1
-    path: Assets/Scenes/2- Travel Scene.unity
-    guid: 34bb8693a5ed772408ca70463e368545
+    path: Assets/Scenes/4 - Travel Scene.unity
+    guid: 3bc7fcff46427eb4fbeeadeb9c5fbe80
   - enabled: 1
-    path: Assets/Scenes/Tutorial - Travel Scene.unity
-    guid: 1af21e44c452f154e9617a48280fa8e5
+    path: Assets/Scenes/5 - Travel Scene.unity
+    guid: 010988ce0bee08f4d9d79b8bb66767bd
   m_configObjects: {}
