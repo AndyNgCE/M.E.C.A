@@ -534,6 +534,10 @@ public class GameController : MonoBehaviour
             //gControl.HealthSave((int)currentHealth);
             gControl.HP = (int)currentHealth;
             yield return new WaitForSeconds(3.5f);
+            /*if(BossScene)
+            {
+
+            }*/
             SceneManager.LoadScene(sceneName: PlayerPrefs.GetString("p_Scene"));
         }
     }
