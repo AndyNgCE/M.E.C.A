@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
+    GameObject counter;
     Count total;
     void Start()
     {
-        total = FindObjectOfType<Count>();
+        counter = GameObject.Find("Reaper");
+        total = counter.GetComponent<Count>();
     }
     void OnCollisionEnter2D(Collision2D col)
     {

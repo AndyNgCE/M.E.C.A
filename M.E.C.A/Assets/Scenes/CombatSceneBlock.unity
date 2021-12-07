@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6757463d8e35ad4d9533970990acba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group: {fileID: 0}
+  group: {fileID: 4971485686779967642, guid: 1e34e9d5e8ac3ef43847422d04ba6c90, type: 3}
   player: {fileID: 207370518}
   dealer: {fileID: 51486673}
   spots: {fileID: 1591837011}

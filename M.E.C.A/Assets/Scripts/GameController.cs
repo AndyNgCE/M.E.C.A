@@ -543,7 +543,9 @@ public class GameController : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1;
+        group = GameObject.Find("Reaper");
         revive = group.GetComponent<Kill>();
+        //DestroyImmediate(revive, true);
         reload = revive.GetList();
         reload.Clear();
         PlayerPrefs.DeleteKey("p_x");
@@ -551,7 +553,7 @@ public class GameController : MonoBehaviour
         PlayerPrefs.DeleteKey("TimetoLoad");
         PlayerPrefs.DeleteKey("Saved");
         total.collected = PlayerPrefs.GetInt("lamp");
-        // Here: var Hp = 300; 
+        gControl.HP = 300;
         string walkOfShame = PlayerPrefs.GetString("p_Scene");
         SceneManager.LoadScene(sceneName: walkOfShame);
     }

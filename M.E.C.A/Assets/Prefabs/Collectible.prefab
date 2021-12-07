@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 422330945194387488}
   - component: {fileID: 422330945194387491}
   - component: {fileID: 422330945194387490}
+  - component: {fileID: -1900984255003345102}
+  - component: {fileID: -6806088607768022523}
   m_Layer: 0
   m_Name: Collectible
   m_TagString: Collection
@@ -135,3 +137,29 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0067748567, y: 0.25695977}
   m_Size: {x: 2.1094143, y: 3.4747784}
   m_Direction: 0
+--- !u!114 &-1900984255003345102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422330945194387501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92a104f6a7fb4e469d4df0b1e8e7a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+--- !u!114 &-6806088607768022523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422330945194387501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678b5af39bc0b4c41b61d3ef01a2f6f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
