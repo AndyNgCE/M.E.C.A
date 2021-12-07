@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+
+    public GameObject group;
+    private Kill revive;
+    private List<int> reload;
     // The deck, player's hand, and cards chosen
     public DeckModel player;
     public DeckModel dealer;
@@ -535,6 +539,9 @@ public class GameController : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1;
+        revive = group.GetComponent<Kill>();
+        reload = revive.GetList();
+        reload.Clear();
         PlayerPrefs.DeleteKey("p_x");
         PlayerPrefs.DeleteKey("p_y");
         PlayerPrefs.DeleteKey("TimetoLoad");
