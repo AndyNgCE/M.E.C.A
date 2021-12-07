@@ -210,20 +210,20 @@ public class GameController : MonoBehaviour
             }
             else if(healCount == 1)
             {
-                healMultiplier = (0.4 + (total.Inventory() * 0.05));
+                healMultiplier = (0.25 + (total.Inventory() * 0.05));
             }
             else if(healCount == 2)
             {
-                healMultiplier = (0.3 + (total.Inventory() * 0.05));
+                healMultiplier = 0;
             }
-            else if(healCount == 3)
+            /*else if(healCount == 3)
             {
                 healMultiplier = (0.2 + (total.Inventory() * 0.05));
             }
             else if(healCount >= 4)
             {
                 healMultiplier = (0.1 + (total.Inventory() * 0.05));
-            }
+            }*/
             currentHealth = currentHealth + (int)((card1 + card2 + card3) * healMultiplier);
             Debug.Log("CHECKING OUR HEALTH AFTER HEALING RIGHT HERE: " + currentHealth);
             healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
@@ -290,20 +290,20 @@ public class GameController : MonoBehaviour
             }
             else if(damageCount == 1)
             {
-                damageMultiplier = (1.2 + (total.Inventory() * 0.1));
+                damageMultiplier = (1.125 + (total.Inventory() * 0.1));
             }
             else if(damageCount == 2)
             {
-                damageMultiplier = (1.15 + (total.Inventory() * 0.1));
+                damageMultiplier = 0;
             }
-            else if(damageCount == 3)
+            /*else if(damageCount == 3)
             {
                 damageMultiplier = (1.1 + (total.Inventory() * 0.1));
             }
             else if(damageCount >= 4)
             {
                 damageMultiplier = (1.05 + (total.Inventory() * 0.1));
-            }
+            }*/
 
             DealDamage(card1 * damageMultiplier);
             damage1.text = "-" + (int)(card1 * damageMultiplier);
@@ -560,6 +560,7 @@ public class GameController : MonoBehaviour
 
         //currentHealth = healthController.currentPlayerHealth;
         playerHP.text = currentHealth + " / " + maxHealth;
+        healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
         enemyHP.text = enemyCurrentHealth + " / " + enemyMaxHealth;
 
         healMultiplier = (0.5 + (total.Inventory() * 0.05));
