@@ -206,11 +206,11 @@ public class GameController : MonoBehaviour
 
             if(healCount == 0)
             {
-                healMultiplier = (0.5 + (total.Inventory() * 0.05));
+                healMultiplier = (0.7 + (total.Inventory() * 0.05));
             }
             else if(healCount == 1)
             {
-                healMultiplier = (0.25 + (total.Inventory() * 0.05));
+                healMultiplier = (0.35 + (total.Inventory() * 0.05));
             }
             else if(healCount == 2)
             {
@@ -377,17 +377,37 @@ public class GameController : MonoBehaviour
             for(int i = 0; i < 3; i++)
             {
                 //damageToTake = UnityEngine.Random.Range(25, 45);
-                damageToTake = 20;
+                //damageToTake = 20;
                 /*if(1)
                 10-20
                 if(2)
                 12-22
                 if(3)
                 14-24*/
+                if(PlayerPrefs.GetString("p_Scene") == "5 - Travel Scene")
+                {
+                    damageToTake = UnityEngine.Random.Range(10, 15);
+                }
+                else if(PlayerPrefs.GetString("p_Scene") == "4 - Travel Scene")
+                {
+                    damageToTake = UnityEngine.Random.Range(15, 20);
+                }
+                else if(PlayerPrefs.GetString("p_Scene") == "3 - Travel Scene")
+                {
+                    damageToTake = UnityEngine.Random.Range(20, 25);
+                }
+                else if(PlayerPrefs.GetString("p_Scene") == "2 - Travel Scene")
+                {
+                    damageToTake = UnityEngine.Random.Range(25, 30);
+                }
+                else if(PlayerPrefs.GetString("p_Scene") == "Travel Scene")
+                {
+                    damageToTake = UnityEngine.Random.Range(30, 35);
+                }
 
                 if(PlayerPrefs.GetString("p_Scene") == "Tutorial - Travel Scene")
                 {
-                    damageToTake = UnityEngine.Random.Range(10, 25);
+                    damageToTake = UnityEngine.Random.Range(5, 10);
                 }
 
                 if(card1 == 22 || card1 == 25 || card1 == 28 || card1 == 31)
@@ -462,7 +482,7 @@ public class GameController : MonoBehaviour
             if(enemyHealthMark <= 130)
             {
                 enemyCurrentHealth = enemyCurrentHealth + (int)(damageCumulative * 0.3);
-                heal2.text = "+" + (damageCumulative * 0.3);
+                heal2.text = "+" + (int)(damageCumulative * 0.3);
                 enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
                 enemyHP.text = enemyCurrentHealth + " / " + enemyMaxHealth;
             }
@@ -621,6 +641,25 @@ public class GameController : MonoBehaviour
                 gameMenu.SetActive(false);
                 settingsButton.SetActive(false);
             }
+        }
+
+        if(blockCount > 2)
+        {
+            blockCount = 2;
+            blockCountText = 2;
+            blockIconNum.text = "" + blockCountText;
+        }
+
+        if(healCount > 2)
+        {
+            healCount = 2;
+            healIconNum.text = "" + healCount;
+        }
+
+        if(damageCount > 2)
+        {
+            damageCount = 2;
+            damageIconNum.text = "" + damageCount;
         }
 
         if(currentHealth < 0)
