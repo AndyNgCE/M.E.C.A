@@ -13,9 +13,9 @@ public class NewBehaviourScript : MonoBehaviour
     {
         Debug.Log("QUIT");
         //playerPosData.playerPosSave();
-        //Application.Quit();
+        Application.Quit();
         //SceneManager.LoadScene(sceneName: "MainMenu");
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void Play()

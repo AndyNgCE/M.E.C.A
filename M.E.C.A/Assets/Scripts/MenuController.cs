@@ -19,8 +19,8 @@ public class MenuController : MonoBehaviour
     public void Quit()
     {
         Debug.Log("QUIT");
-        //Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void Play()

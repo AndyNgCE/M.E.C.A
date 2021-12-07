@@ -224,6 +224,10 @@ public class GameController : MonoBehaviour
             {
                 healMultiplier = (0.1 + (total.Inventory() * 0.05));
             }*/
+            if(enemyCurrentHealth <= 0)
+            {
+                healMultiplier = 0;
+            }
             currentHealth = currentHealth + (int)((card1 + card2 + card3) * healMultiplier);
             Debug.Log("CHECKING OUR HEALTH AFTER HEALING RIGHT HERE: " + currentHealth);
             healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
@@ -373,7 +377,7 @@ public class GameController : MonoBehaviour
             for(int i = 0; i < 3; i++)
             {
                 //damageToTake = UnityEngine.Random.Range(25, 45);
-                damageToTake = 30;
+                damageToTake = 20;
                 /*if(1)
                 10-20
                 if(2)
@@ -566,6 +570,10 @@ public class GameController : MonoBehaviour
         healMultiplier = (0.5 + (total.Inventory() * 0.05));
         blockMultiplier = (0.3 + (total.Inventory() * 0.025));
         damageMultiplier = (1.25 + (total.Inventory() * 0.1));
+
+        blockCount = 0;
+        healCount = 0;
+        damageCount = 0;
 
         damage1.text = "";
         damage2.text = "";
