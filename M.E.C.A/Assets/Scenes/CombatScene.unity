@@ -2457,6 +2457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Desert War
       objectReference: {fileID: 0}
+    - target: {fileID: 3251280484271407247, guid: d7550d41c8454bc48a6c64f7ed9b1fa5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7550d41c8454bc48a6c64f7ed9b1fa5, type: 3}
 --- !u!1 &2050094478

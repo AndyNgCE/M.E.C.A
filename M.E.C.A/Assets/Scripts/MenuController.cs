@@ -34,6 +34,7 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.DeleteKey("p_scene");
         PlayerPrefs.SetInt("lamp", 0);
         Debug.Log("PLAY");
+        PlayerPrefs.SetInt("read", 0);
         SceneManager.LoadScene(sceneName: "Tutorial - Travel Scene");
     }
 
@@ -46,6 +47,7 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.SetInt("health", 300);
         PlayerPrefs.DeleteKey("TimetoLoad");
         PlayerPrefs.DeleteKey("Saved");
+        PlayerPrefs.SetInt("read", 0);
         // Pull last known level played
         string goToScene = PlayerPrefs.GetString("p_Scene");
         SceneManager.LoadScene(sceneName: goToScene);

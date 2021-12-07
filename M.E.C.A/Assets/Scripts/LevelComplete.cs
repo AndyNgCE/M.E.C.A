@@ -58,6 +58,7 @@ public class LevelComplete : MonoBehaviour
                     MC.flares--;
                     Destroy(clear);
                 }
+                PlayerPrefs.SetInt("read", 0);
                 SceneManager.LoadScene(sceneName: nextLevel);
             }
             else

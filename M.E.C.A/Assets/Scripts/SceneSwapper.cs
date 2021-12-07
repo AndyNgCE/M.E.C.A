@@ -47,6 +47,7 @@ public class SceneSwapper : MonoBehaviour
     {
         if(col.gameObject.tag.Equals("Player"))
         {
+            PlayerPrefs.SetInt("read", 1);
             Debug.Log("Triggered by Player");
             // used to put the player back after victory
             playerPosData.playerPosSave();
