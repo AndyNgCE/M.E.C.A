@@ -330,7 +330,7 @@ public class GameController : MonoBehaviour
 
             if(healCount != 0)
             {
-                damageCount--;
+                healCount--;
             }
         }
 
@@ -642,6 +642,10 @@ public class GameController : MonoBehaviour
                 settingsButton.SetActive(false);
             }
         }
+
+        damageIconNum.text = "" + damageCount;
+        healIconNum.text = "" + healCount;
+        blockIconNum.text = "" + blockCountText;
 
         if(blockCount > 2)
         {
