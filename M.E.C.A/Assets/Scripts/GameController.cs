@@ -183,7 +183,7 @@ public class GameController : MonoBehaviour
                 card2 = card2 * 0.8;
                 card3 = card3 * 0.8;
             }
-            if(enemyCheck == 2)
+            if(enemyCheck == 2 || enemyCheck == 3)
             {
                 card1 -= 5;
                 card2 -= 5;
@@ -254,7 +254,7 @@ public class GameController : MonoBehaviour
                 card2 = card2 * 0.8;
                 card3 = card3 * 0.8;
             }
-            if(enemyCheck == 2)
+            if(enemyCheck == 2 || enemyCheck == 3)
             {
                 card1 -= 5;
                 card2 -= 5;
@@ -281,7 +281,7 @@ public class GameController : MonoBehaviour
                 card2 = card2 * 0.8;
                 card3 = card3 * 0.8;
             }
-            if(enemyCheck == 2)
+            if(enemyCheck == 2 || enemyCheck == 3)
             {
                 card1 -= 5;
                 card2 -= 5;
@@ -298,7 +298,7 @@ public class GameController : MonoBehaviour
             }
             else if(damageCount == 2)
             {
-                damageMultiplier = 0;
+                damageMultiplier = 1;
             }
             /*else if(damageCount == 3)
             {
@@ -473,7 +473,7 @@ public class GameController : MonoBehaviour
             heal2.text = "";
 
             // 5 health damage at end turn
-            if(enemyCheck == 0)
+            if(enemyCheck == 0 || enemyCheck == 3)
             {
                 currentHealth -= 10;
                 healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
@@ -483,7 +483,7 @@ public class GameController : MonoBehaviour
                 playerDamage1.text = "";
             }
 
-            if(enemyCheck == 1)
+            if(enemyCheck == 1 || enemyCheck == 3)
             {
                 enemyCurrentHealth += 10;
                 enemyHealthBar.fillAmount = (float)enemyCurrentHealth / (float)enemyMaxHealth;
