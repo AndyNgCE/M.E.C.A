@@ -3,7 +3,35 @@ guid: d6757463d8e35ad4d9533970990acba7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - group: {fileID: 4971485686779967642, guid: 1e34e9d5e8ac3ef43847422d04ba6c90, type: 3}
+  - player: {instanceID: 0}
+  - dealer: {instanceID: 0}
+  - spots: {instanceID: 0}
+  - winnerText: {instanceID: 0}
+  - turnText: {instanceID: 0}
+  - playerTurnText: {instanceID: 0}
+  - playerHP: {instanceID: 0}
+  - enemyHP: {instanceID: 0}
+  - damage1: {instanceID: 0}
+  - damage2: {instanceID: 0}
+  - damage3: {instanceID: 0}
+  - playerDamage1: {instanceID: 0}
+  - playerDamage2: {instanceID: 0}
+  - playerDamage3: {instanceID: 0}
+  - heal1: {instanceID: 0}
+  - heal2: {instanceID: 0}
+  - damageIconNum: {instanceID: 0}
+  - healIconNum: {instanceID: 0}
+  - blockIconNum: {instanceID: 0}
+  - restartLevel: {instanceID: 0}
+  - quitLevel: {instanceID: 0}
+  - menuFade: {instanceID: 0}
+  - gameMenu: {instanceID: 0}
+  - settingsButton: {instanceID: 0}
+  - healthBar: {instanceID: 0}
+  - enemyHealthBar: {instanceID: 0}
+  - cardBlocker: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
