@@ -458,7 +458,7 @@ PrefabInstance:
     - target: {fileID: 1303398695511748473, guid: 7ca9a517d1a7e2642b0332169996c6fa,
         type: 3}
       propertyPath: m_Text
-      value: 
+      value: A winner is you
       objectReference: {fileID: 0}
     - target: {fileID: 1303398696149711548, guid: 7ca9a517d1a7e2642b0332169996c6fa,
         type: 3}

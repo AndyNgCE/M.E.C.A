@@ -148,14 +148,17 @@ public class GameController : MonoBehaviour
         if(spots.CardCount == 1)
         {
             card1 = spots.HandValue();
+            card1block = spots.HandValue();
         }
         else if(spots.CardCount == 2)
         {
             card2 = spots.HandValue() - card1;
+            card2block = spots.HandValue() - card1;
         }
         else
         {
             card3 = spots.HandValue() - card1 - card2;
+            card3block = spots.HandValue() - card1 - card2;
         }
 // int effect = card1 + card2 + card3
         if(spots.CardCount >= 3)
@@ -185,26 +188,26 @@ public class GameController : MonoBehaviour
         {
             if(enemyHealthMark > 130 && enemyHealthMark < 180)
             {
-                card1 = card1 * 0.8;
-                card2 = card2 * 0.8;
-                card3 = card3 * 0.8;
+                card1block = card1 * 0.8;
+                card2block = card2 * 0.8;
+                card3block = card3 * 0.8;
             }
             if(enemyCheck == 2 || enemyCheck == 3)
             {
-                card1 -= 5;
-                card2 -= 5;
-                card3 -= 5;
+                card1block -= 5;
+                card2block -= 5;
+                card3block -= 5;
             }
-            DealDamage(card1);
-            damage1.text = "-" + (int)card1;
+            DealDamage(card1block);
+            damage1.text = "-" + (int)card1block;
             yield return new WaitForSeconds(0.5f);
             damage1.text = "";
-            DealDamage(card2);
-            damage2.text = "-" + (int)card2;
+            DealDamage(card2block);
+            damage2.text = "-" + (int)card2block;
             yield return new WaitForSeconds(0.5f);
             damage2.text = "";
-            DealDamage(card3);
-            damage3.text = "-" + (int)card3;
+            DealDamage(card3block);
+            damage3.text = "-" + (int)card3block;
             yield return new WaitForSeconds(0.5f);
             damage3.text = "";
 
@@ -234,11 +237,11 @@ public class GameController : MonoBehaviour
             {
                 healMultiplier = 0;
             }
-            currentHealth = currentHealth + (int)((card1 + card2 + card3) * healMultiplier);
+            currentHealth = currentHealth + (int)((card1block + card2block + card3block) * healMultiplier);
             Debug.Log("CHECKING OUR HEALTH AFTER HEALING RIGHT HERE: " + currentHealth);
             healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
             playerHP.text = currentHealth + " / " + maxHealth;
-            heal1.text = "+" + (int)((card1 + card2 + card3) * healMultiplier);
+            heal1.text = "+" + (int)((card1block + card2block + card3block) * healMultiplier);
             healCount++;
             if(blockCount != 0)
             {
@@ -256,26 +259,26 @@ public class GameController : MonoBehaviour
         {
             if(enemyHealthMark > 130 && enemyHealthMark < 180)
             {
-                card1 = card1 * 0.8;
-                card2 = card2 * 0.8;
-                card3 = card3 * 0.8;
+                card1block = card1 * 0.8;
+                card2block = card2 * 0.8;
+                card3block = card3 * 0.8;
             }
             if(enemyCheck == 2 || enemyCheck == 3)
             {
-                card1 -= 5;
-                card2 -= 5;
-                card3 -= 5;
+                card1block -= 5;
+                card2block -= 5;
+                card3block -= 5;
             }
-            DealDamage(card1);
-            damage1.text = "-" + (int)card1;
+            DealDamage(card1block);
+            damage1.text = "-" + (int)card1block;
             yield return new WaitForSeconds(0.5f);
             damage1.text = "";
-            DealDamage(card2);
-            damage2.text = "-" + (int)card2;
+            DealDamage(card2block);
+            damage2.text = "-" + (int)card2block;
             yield return new WaitForSeconds(0.5f);
             damage2.text = "";
-            DealDamage(card3);
-            damage3.text = "-" + (int)card3;
+            DealDamage(card3block);
+            damage3.text = "-" + (int)card3block;
             yield return new WaitForSeconds(0.5f);
             damage3.text = "";
         }
@@ -283,15 +286,15 @@ public class GameController : MonoBehaviour
         {
             if(enemyHealthMark > 130 && enemyHealthMark < 180)
             {
-                card1 = card1 * 0.8;
-                card2 = card2 * 0.8;
-                card3 = card3 * 0.8;
+                card1block = card1 * 0.8;
+                card2block = card2 * 0.8;
+                card3block = card3 * 0.8;
             }
             if(enemyCheck == 2 || enemyCheck == 3)
             {
-                card1 -= 5;
-                card2 -= 5;
-                card3 -= 5;
+                card1block -= 5;
+                card2block -= 5;
+                card3block -= 5;
             }
 
             if(damageCount == 0)
@@ -315,16 +318,16 @@ public class GameController : MonoBehaviour
                 damageMultiplier = (1.05 + (total.Inventory() * 0.1));
             }*/
 
-            DealDamage(card1 * damageMultiplier);
-            damage1.text = "-" + (int)(card1 * damageMultiplier);
+            DealDamage(card1block * damageMultiplier);
+            damage1.text = "-" + (int)(card1block * damageMultiplier);
             yield return new WaitForSeconds(0.5f);
             damage1.text = "";
-            DealDamage(card2 * damageMultiplier);
-            damage2.text = "-" + (int)(card2 * damageMultiplier);
+            DealDamage(card2block * damageMultiplier);
+            damage2.text = "-" + (int)(card2block * damageMultiplier);
             yield return new WaitForSeconds(0.5f);
             damage2.text = "";
-            DealDamage(card3 * damageMultiplier);
-            damage3.text = "-" + (int)(card3 * damageMultiplier);
+            DealDamage(card3block * damageMultiplier);
+            damage3.text = "-" + (int)(card3block * damageMultiplier);
             yield return new WaitForSeconds(0.5f);
             damage3.text = "";
             damageCount++;
@@ -390,7 +393,15 @@ public class GameController : MonoBehaviour
                 12-22
                 if(3)
                 14-24*/
-                if(PlayerPrefs.GetString("p_Scene") == "5 - Travel Scene")
+                if(currentScene.name == "CombatSceneBoss")
+                {
+                    damageToTake = UnityEngine.Random.Range(40, 45);
+                }
+                else if(PlayerPrefs.GetString("p_Scene") == "Tutorial - Travel Scene")
+                {
+                    damageToTake = UnityEngine.Random.Range(5, 10);
+                }
+                else if(PlayerPrefs.GetString("p_Scene") == "5 - Travel Scene")
                 {
                     damageToTake = UnityEngine.Random.Range(10, 15);
                 }
@@ -409,11 +420,6 @@ public class GameController : MonoBehaviour
                 else if(PlayerPrefs.GetString("p_Scene") == "Travel Scene")
                 {
                     damageToTake = UnityEngine.Random.Range(30, 35);
-                }
-
-                if(PlayerPrefs.GetString("p_Scene") == "Tutorial - Travel Scene")
-                {
-                    damageToTake = UnityEngine.Random.Range(5, 10);
                 }
 
                 if(card1 == 22 || card1 == 25 || card1 == 28 || card1 == 31)
@@ -544,7 +550,10 @@ public class GameController : MonoBehaviour
             {
                 SceneManager.LoadScene(sceneName: "BossSceneWin");
             }
-            SceneManager.LoadScene(sceneName: PlayerPrefs.GetString("p_Scene"));
+            else
+            {
+                SceneManager.LoadScene(sceneName: PlayerPrefs.GetString("p_Scene"));
+            }
         }
     }
 
