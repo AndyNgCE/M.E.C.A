@@ -12,6 +12,9 @@ public class SkipLevel : MonoBehaviour
 
     public GameObject[] clear;
     public GameObject[] locks;
+    public GameObject group;
+    private Kill revive;
+    private List<int> reload;
 
     public void SkipLevelFunc()
     {
@@ -24,6 +27,7 @@ public class SkipLevel : MonoBehaviour
         {
             Destroy(clear.gameObject);
         }
+        reload.Clear();
         if(currentScene.name == "Tutorial - Travel Scene")
         {
             SceneManager.LoadScene(sceneName: "5 - Travel Scene");
@@ -54,9 +58,12 @@ public class SkipLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        group = GameObject.Find("Reaper");
         currentScene = SceneManager.GetActiveScene();
         counter = GameObject.Find("Reaper");
         total = counter.GetComponent<Count>();
+        revive = group.GetComponent<Kill>();
+        reload = revive.GetList();
     }
     void Update()
     {
