@@ -365,6 +365,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908793949}
   m_CullTransparentMesh: 1
+--- !u!1 &1440208345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1440208347}
+  - component: {fileID: 1440208346}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1440208346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440208345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feda1e58535b7544f9e4dc069724acf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1440208347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440208345}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1952.092, y: 1066.2957, z: -221.1142}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1545329340
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,10 +498,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 418204365}
     m_Modifications:
+    - target: {fileID: 1303398695125488642, guid: 7ca9a517d1a7e2642b0332169996c6fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1440208346}
+    - target: {fileID: 1303398695125488642, guid: 7ca9a517d1a7e2642b0332169996c6fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303398695125488642, guid: 7ca9a517d1a7e2642b0332169996c6fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BackToMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1303398695511748473, guid: 7ca9a517d1a7e2642b0332169996c6fa,
         type: 3}
       propertyPath: m_Text
-      value: A winner is you
+      value: "You stand over the creature your sword raised, ready to end this mission.
+        However, before you bring your weapon down a voice is projected into your
+        mind, desperate but powerful. \"Wait human! please listen to me even if for
+        a second...\" You know you have no time to falter, you know this creature
+        will only spin lies and tricks to live, you know that your faith in the actions
+        and words of the organization and God that sent you here are absolute. Nothing
+        this creature says will make you falter...but against your better judment
+        you gesture the creature to continue, perhaps out of a small shred of pity
+        for the being. \n''Thank you, I can imagine that most, in your position,
+        would have not have waited... please listen to my tale and then i'll allow
+        you to seal me, you have my word.\"\n\"Humanity started by the whims of two
+        gods, one of life and one of death...\"\n\"Both loved their creations dearly
+        and watched over them from above\"\n\"They bore witness to all the good humans
+        brought...all the joy, dreams, and hopes\"\n\"But they also witnessed all
+        the terrible things that humans did as well: war, greed, and gluttony\"\n\"The
+        god of life, in their desperate attempt to protect humanity, came to belive
+        that in order to protect humans, they must be controlled\"\n\"Their fellow
+        god disagreed understanding that the beauty of humans came from their ability
+        to choose, it gives meaning to their existance and makes each one unqiue...\"\n\"And
+        so the two gods came to blows over humanity, taking avatars to roam the world
+        and push their agendas for humans: one to control it, the other to protect
+        it.\"\n\"However, as all things fear death, many chose to heed the message
+        of the god of life beliving that death had arrived to cause chaos and destruction\"\n\"And
+        so after a great battle between the forces of life and death, the avatar
+        of death was sealed away and forgotten. Life continued under the guidaance
+        of the god of life and its forces...\"\n\"That is end of my tale, now I ask
+        you...what will you do now?\"\n-To be continued-"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303398695511748473, guid: 7ca9a517d1a7e2642b0332169996c6fa,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303398695511748475, guid: 7ca9a517d1a7e2642b0332169996c6fa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1381
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303398695511748475, guid: 7ca9a517d1a7e2642b0332169996c6fa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 863.28
       objectReference: {fileID: 0}
     - target: {fileID: 1303398696149711548, guid: 7ca9a517d1a7e2642b0332169996c6fa,
         type: 3}
