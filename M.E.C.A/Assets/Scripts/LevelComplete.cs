@@ -12,6 +12,7 @@ public class LevelComplete : MonoBehaviour
     private List<int> reload;
     public GameObject[] clear;
     public GameObject[] locks;
+    public GameObject SaveNum;
     PlayerMovement MC;
 
     [SerializeField]
@@ -65,6 +66,9 @@ public class LevelComplete : MonoBehaviour
                     Destroy(clear.gameObject);
                 }
                 PlayerPrefs.SetInt("read", 0);
+               // SaveNum = GameObject.Find("Reaper");
+
+                //PlayerPrefs.SetInt("lamp", );
                 SceneManager.LoadScene(sceneName: nextLevel);
             }
             /*else

@@ -17,6 +17,7 @@ public class MenuController : MonoBehaviour
     public Slider musicBar;
     public GameObject[] clear;
     public GameObject[] locks;
+    public GameObject countClean;
 
     public void Quit()
     {
@@ -99,6 +100,8 @@ public class MenuController : MonoBehaviour
     public void RestartLevelTravel()
     {
         Time.timeScale = 1;
+        countClean = GameObject.Find("Reaper");
+        Destroy(countClean);
         locks = GameObject.FindGameObjectsWithTag("lock");
         clear = GameObject.FindGameObjectsWithTag("mark");
         foreach (GameObject locks in locks)
