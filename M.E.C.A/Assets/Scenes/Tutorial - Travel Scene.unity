@@ -8787,7 +8787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ee934383c19f841bd9c926d86963d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: Tutorial
+  destination: CombatSceneBoss
   ID: 0
 --- !u!61 &805473786
 BoxCollider2D:

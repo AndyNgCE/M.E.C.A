@@ -1093,8 +1093,8 @@ MonoBehaviour:
   maxHealth: 300
   currentHealth: 300
   healthBar: {fileID: 993263653}
-  enemyMaxHealth: 300
-  enemyCurrentHealth: 300
+  enemyMaxHealth: 600
+  enemyCurrentHealth: 600
   enemyHealthBar: {fileID: 1784638771}
   enemyHealthMark: 0
   card1: 0
@@ -3541,6 +3541,21 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7160072905300714125, guid: 563c89e8b0e57a84f8158789a4cecea9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160072905300714125, guid: 563c89e8b0e57a84f8158789a4cecea9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160072905300714125, guid: 563c89e8b0e57a84f8158789a4cecea9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7160072906317430860, guid: 563c89e8b0e57a84f8158789a4cecea9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3576,6 +3591,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160072906514022633, guid: 563c89e8b0e57a84f8158789a4cecea9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160072906514022633, guid: 563c89e8b0e57a84f8158789a4cecea9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160072906514022633, guid: 563c89e8b0e57a84f8158789a4cecea9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7160072906559954248, guid: 563c89e8b0e57a84f8158789a4cecea9,
         type: 3}

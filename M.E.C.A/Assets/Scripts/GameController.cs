@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     Count total;
     GlobalControl gControl;
 
+    Scene currentScene;
+
     //public HealthController healthController;
     
     // UI text
@@ -68,8 +70,8 @@ public class GameController : MonoBehaviour
     public Image healthBar;
 
     // Enemy Health
-    public double enemyMaxHealth = 300;
-    public double enemyCurrentHealth = 300;
+    public double enemyMaxHealth = 600;
+    public double enemyCurrentHealth = 600;
     public Image enemyHealthBar;
     public double enemyHealthMark;
 
@@ -79,6 +81,10 @@ public class GameController : MonoBehaviour
     public double card1;
     public double card2;
     public double card3;
+
+    public double card1block;
+    public double card2block;
+    public double card3block;
 
     public double healCount = 0;
     public double blockCount = 0;
@@ -534,10 +540,10 @@ public class GameController : MonoBehaviour
             //gControl.HealthSave((int)currentHealth);
             gControl.HP = (int)currentHealth;
             yield return new WaitForSeconds(3.5f);
-            /*if(BossScene)
+            if(currentScene.name == "CombatSceneBoss")
             {
-
-            }*/
+                SceneManager.LoadScene(sceneName: "BossSceneWin");
+            }
             SceneManager.LoadScene(sceneName: PlayerPrefs.GetString("p_Scene"));
         }
     }
@@ -550,6 +556,10 @@ public class GameController : MonoBehaviour
             winnerText.text = "DEFEAT!!!"; // return to start of level (probably some sort of menu tbh)
             condition = 0;
             yield return new WaitForSeconds(3.5f);
+            if(currentScene.name == "CombatSceneBoss")
+            {
+                SceneManager.LoadScene(sceneName: "BossSceneLose");
+            }
             restartLevel.SetActive(true);
             quitLevel.SetActive(true);
             menuFade.SetActive(true);
@@ -585,6 +595,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         fromScene = PlayerPrefs.GetString("p_Scene");
+
+        currentScene = SceneManager.GetActiveScene();
 
         currentHealth = gControl.Memory();
 
@@ -688,11 +700,11 @@ public class GameController : MonoBehaviour
             playerHP.text = currentHealth + " / " + maxHealth;
         }
 
-        if(enemyCurrentHealth > 300)
+        /*if(enemyCurrentHealth > 300)
         {
             enemyCurrentHealth = 300;
             enemyHP.text = enemyCurrentHealth + " / " + enemyMaxHealth;
-        }
+        }*/
     }
 
     IEnumerator StartGame()
