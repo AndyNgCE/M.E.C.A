@@ -15,6 +15,7 @@ public class SkipLevel : MonoBehaviour
 
     public void SkipLevelFunc()
     {
+        total.CollectSave();
         foreach (GameObject locks in locks)
         {
             Destroy(locks.gameObject);
