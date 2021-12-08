@@ -29,11 +29,11 @@ public class Overload : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         if(currentScene.name == "CombatScene" || currentScene.name == "CombatSceneHeal" || currentScene.name == "CombatSceneBlock")
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 }

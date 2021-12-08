@@ -27,6 +27,12 @@ public class LevelComplete : MonoBehaviour
         gControl = FindObjectOfType<GlobalControl>();
     }
 
+    void Update()
+    {
+        locks = GameObject.FindGameObjectsWithTag("lock");
+        clear = GameObject.FindGameObjectsWithTag("mark");
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.tag.Equals("Player"))
@@ -47,7 +53,7 @@ public class LevelComplete : MonoBehaviour
                 }
                 foreach (GameObject locks in locks)
                 {
-                    Destroy(locks);
+                    Destroy(locks.gameObject);
                 }
                 if (clear == null)
                 {
@@ -56,12 +62,12 @@ public class LevelComplete : MonoBehaviour
                 foreach (GameObject clear in clear)
                 {
                     MC.flares--;
-                    Destroy(clear);
+                    Destroy(clear.gameObject);
                 }
                 PlayerPrefs.SetInt("read", 0);
                 SceneManager.LoadScene(sceneName: nextLevel);
             }
-            else
+            /*else
             {
                 if (clear == null)
                 {
@@ -83,7 +89,7 @@ public class LevelComplete : MonoBehaviour
                 PlayerPrefs.DeleteKey("p_x");
                 PlayerPrefs.DeleteKey("p_y");
                 SceneManager.LoadScene(sceneName: "MainMenu");
-            }
+            }*/
         }
     }
 }

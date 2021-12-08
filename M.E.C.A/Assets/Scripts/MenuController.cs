@@ -15,6 +15,8 @@ public class MenuController : MonoBehaviour
 
     public Slider soundBar;
     public Slider musicBar;
+    public GameObject[] clear;
+    public GameObject[] locks;
 
     public void Quit()
     {
@@ -81,13 +83,33 @@ public class MenuController : MonoBehaviour
     public void MainMenuTravel()
     {
         Time.timeScale = 1;
+        locks = GameObject.FindGameObjectsWithTag("lock");
+        clear = GameObject.FindGameObjectsWithTag("mark");
+        foreach (GameObject locks in locks)
+        {
+            Destroy(locks.gameObject);
+        }
+        foreach (GameObject clear in clear)
+        {
+            Destroy(clear.gameObject);
+        }
         SceneManager.LoadScene(sceneName: "MainMenu");
     }
 
     public void RestartLevelTravel()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(sceneName: "Travel Scene");
+        locks = GameObject.FindGameObjectsWithTag("lock");
+        clear = GameObject.FindGameObjectsWithTag("mark");
+        foreach (GameObject locks in locks)
+        {
+            Destroy(locks.gameObject);
+        }
+        foreach (GameObject clear in clear)
+        {
+            Destroy(clear.gameObject);
+        }
+        SceneManager.LoadScene(sceneName: "p_Scene");
     }
 
     void Start()

@@ -10,7 +10,7 @@ public class TurnColor : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         sprite = gameObject.GetComponent<SpriteRenderer>();
-        if(currentScene.name == "CombatScene")
+        if(currentScene.name == "CombatScene" || currentScene.name == "Tutorial")
             sprite.color = new Color(255, 0, 0, 1);
         if(currentScene.name == "CombatSceneHeal")
             sprite.color = new Color(0, 255, 0, 1);

@@ -8,9 +8,17 @@ public class Key3 : MonoBehaviour
     public bool door3 = false;
  
     public Sprite newSprite;
+    public static Key3 removal;
 
     void Start()
     {
+        if (removal != null && removal != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        removal = this;
         DontDestroyOnLoad(this);
     }
     void OnCollisionEnter2D(Collision2D col)

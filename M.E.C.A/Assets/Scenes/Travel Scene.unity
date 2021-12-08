@@ -989,6 +989,8 @@ MonoBehaviour:
   settings: {fileID: 381143145}
   soundBar: {fileID: 381143147}
   musicBar: {fileID: 381143146}
+  clear: []
+  locks: []
 --- !u!4 &25602492
 Transform:
   m_ObjectHideFlags: 0
@@ -9342,6 +9344,8 @@ MonoBehaviour:
   settings: {fileID: 381143145}
   soundBar: {fileID: 381143147}
   musicBar: {fileID: 381143146}
+  clear: []
+  locks: []
 --- !u!114 &300797029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34260,7 +34264,7 @@ PrefabInstance:
     - target: {fileID: 8797836331970039494, guid: 6756e6686e8158e41950de071e7526e1,
         type: 3}
       propertyPath: nextLevel
-      value: MainMenu
+      value: CombatSceneBoss
       objectReference: {fileID: 0}
     - target: {fileID: 8797836331970039495, guid: 6756e6686e8158e41950de071e7526e1,
         type: 3}
@@ -65749,7 +65753,7 @@ PrefabInstance:
     - target: {fileID: 8797836331970039494, guid: 6756e6686e8158e41950de071e7526e1,
         type: 3}
       propertyPath: nextLevel
-      value: MainMenu
+      value: CombatSceneBoss
       objectReference: {fileID: 0}
     - target: {fileID: 8797836331970039495, guid: 6756e6686e8158e41950de071e7526e1,
         type: 3}
@@ -73107,6 +73111,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2229394177887556614, guid: 3bae6d50389b898479a640e765623b0c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2543136637060243702, guid: 3bae6d50389b898479a640e765623b0c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3810504105752105720, guid: 3bae6d50389b898479a640e765623b0c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -73116,6 +73130,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: IncrementCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912504808642127876, guid: 3bae6d50389b898479a640e765623b0c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bae6d50389b898479a640e765623b0c, type: 3}

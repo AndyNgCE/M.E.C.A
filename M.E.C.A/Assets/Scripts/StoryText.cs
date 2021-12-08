@@ -294,7 +294,7 @@ public class StoryText : MonoBehaviour
                 }
                 else if (counter == 1)
                 {
-                    storyText.text = "It helps that you were able to skip navigating the cityscape but, it is troubling see the warping problem that city is having...";
+                    storyText.text = "It helps that you were able to skip navigating the cityscape but, it is troubling see the warping problem that the city is having...";
                 }
                 else if (counter == 2)
                 {

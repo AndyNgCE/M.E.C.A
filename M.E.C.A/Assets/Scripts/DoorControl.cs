@@ -15,6 +15,11 @@ public class DoorControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MC = FindObjectOfType<Key>();
+        if(MC == null)
+        {
+            return;
+        }
         if(MC.door1 == true)
         {
 

@@ -7,8 +7,17 @@ public class Key : MonoBehaviour
 {
     public bool door1 = false;
     public Sprite newSprite;
+    public static Key removal;
     void Start()
     {
+           
+        if (removal != null && removal != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        removal = this;
         DontDestroyOnLoad(this);
     }
     void OnCollisionEnter2D(Collision2D col)
@@ -16,7 +25,7 @@ public class Key : MonoBehaviour
         if (col.gameObject.tag.Equals("Player"))
         {
             door1 = true;
-            gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
             this.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
@@ -30,11 +39,11 @@ public class Key : MonoBehaviour
         }
         if (currentScene.name == "CombatScene" || currentScene.name == "CombatSceneHeal" || currentScene.name == "CombatSceneBlock")
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 }

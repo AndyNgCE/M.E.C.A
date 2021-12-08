@@ -15,6 +15,11 @@ public class DoorControl2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MC = FindObjectOfType<Key2>();
+        if (MC == null)
+        {
+            return;
+        }
         if (MC.door2 == true)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
