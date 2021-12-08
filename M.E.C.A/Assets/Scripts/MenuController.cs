@@ -33,7 +33,7 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.SetInt("health", 300);
         PlayerPrefs.DeleteKey("TimetoLoad");
         PlayerPrefs.DeleteKey("Saved");
-        PlayerPrefs.DeleteKey("p_scene");
+        PlayerPrefs.DeleteKey("p_Scene");
         PlayerPrefs.SetInt("lamp", 0);
         Debug.Log("PLAY");
         PlayerPrefs.SetInt("read", 0);
@@ -109,7 +109,7 @@ public class MenuController : MonoBehaviour
         {
             Destroy(clear.gameObject);
         }
-        SceneManager.LoadScene(sceneName: "p_Scene");
+        SceneManager.LoadScene(sceneName: PlayerPrefs.GetString("p_Scene"));
     }
 
     void Start()

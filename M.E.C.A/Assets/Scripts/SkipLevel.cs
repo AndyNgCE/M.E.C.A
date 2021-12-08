@@ -10,8 +10,19 @@ public class SkipLevel : MonoBehaviour
     Count total;
     GameObject counter;
 
+    public GameObject[] clear;
+    public GameObject[] locks;
+
     public void SkipLevelFunc()
     {
+        foreach (GameObject locks in locks)
+        {
+            Destroy(locks.gameObject);
+        }
+        foreach (GameObject clear in clear)
+        {
+            Destroy(clear.gameObject);
+        }
         if(currentScene.name == "Tutorial - Travel Scene")
         {
             SceneManager.LoadScene(sceneName: "5 - Travel Scene");
@@ -45,5 +56,10 @@ public class SkipLevel : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         counter = GameObject.Find("Reaper");
         total = counter.GetComponent<Count>();
+    }
+    void Update()
+    {
+        locks = GameObject.FindGameObjectsWithTag("lock");
+        clear = GameObject.FindGameObjectsWithTag("mark");
     }
 }

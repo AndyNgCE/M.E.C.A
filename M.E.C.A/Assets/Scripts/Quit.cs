@@ -35,6 +35,6 @@ public class Quit : MonoBehaviour
         revive = group.GetComponent<Kill>();
         reload = revive.GetList();
         reload.Clear();
-        SceneManager.LoadScene(sceneName: "p_scene");
+        SceneManager.LoadScene(sceneName: "p_Scene");
     }
 }
